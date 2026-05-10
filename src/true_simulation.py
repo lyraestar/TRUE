@@ -753,10 +753,6 @@ def select_ttb(scenario: Scenario, state: TrustState, round_no: int, module: Mod
         tv = trust_var(state, entity.eid, k)
         predicted_utility = tm * module_difficulty(scenario, module, round_no)
         trust_objective = tm + 0.03 * math.log1p(state.selected[entity.eid])
-        if entity.eid == "A8":
-            trust_objective += scenario.ttb_trust_bonus
-            if round_no >= 150:
-                trust_objective += 0.05
         score = 0.22 * predicted_utility + 0.70 * trust_objective - 0.04 * tv + preference_bonus(module, entity)
         if score > best_score:
             best_score = score
