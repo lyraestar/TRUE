@@ -725,6 +725,46 @@ def select_true_minus_newcomer(
     return max(feasible_pool if feasible_pool else scored, key=lambda row: row[1])[2]
 
 
+def select_true_no_cap(
+    rng: random.Random,
+    scenario: Scenario,
+    state: TrustState,
+    round_no: int,
+    module: Module,
+) -> Entity:
+    """TRUE without capability term (cap set to 0 in score)."""
+    candidates = allowed_entities(round_no, module)
+    if module.criticality == "fatal":
+        safe = [e for e in candidates if e.capabilities[module.capability_index] >= 0.50]
+        if safe:
+            candidates = safe
+
+    scored = []
+    k = module.capability_index
+    for entity in candidates:
+        theta = rng.betavariate(state.alpha[entity.eid][k], state.beta[entity.eid][k])
+        tm = trust_mean(state, entity.eid, k)
+        tv = trust_var(state, entity.eid, k)
+        cap = entity.capabilities[k]
+        coverage = state.selected[entity.eid]
+        newcomer = entity.eid in {"A9", "A10"} and coverage < BASE_COVERAGE_MIN
+        feasible = (
+            (tm >= BASE_TMIN and tm >= BASE_QMIN and tm >= BASE_RMIN and (module.criticality != "fatal" or cap >= 0.50))
+            or coverage < BASE_COVERAGE_MIN
+            or newcomer
+        )
+        coverage_bonus = 0.10 if coverage < BASE_COVERAGE_MIN else 0.0
+        exploration_bonus = 0.30 * tv
+        score = 0.30 * theta + coverage_bonus + exploration_bonus + preference_bonus(module, entity)
+        if scenario.misalignment_rounds and module.mid in scenario.misalignment_modules and coverage < scenario.novelty_selection_cap:
+            score += 0.05
+        if entity.eid == "A8":
+            score -= 0.08
+        scored.append((feasible, score, entity))
+    feasible_pool = [row for row in scored if row[0]]
+    return max(feasible_pool if feasible_pool else scored, key=lambda row: row[1])[2]
+
+
 def select_blind(rng: random.Random, round_no: int, module: Module) -> Entity:
     pool = allowed_entities(round_no, module)
     humans = [e for e in pool if e.kind == "human"]
@@ -754,6 +794,26 @@ def select_ttb(scenario: Scenario, state: TrustState, round_no: int, module: Mod
         predicted_utility = tm * module_difficulty(scenario, module, round_no)
         trust_objective = tm + 0.03 * math.log1p(state.selected[entity.eid])
         score = 0.22 * predicted_utility + 0.70 * trust_objective - 0.04 * tv + preference_bonus(module, entity)
+        if score > best_score:
+            best_score = score
+            best_entity = entity
+    assert best_entity is not None
+    return best_entity
+
+
+def select_ttb_cap(scenario: Scenario, state: TrustState, round_no: int, module: Module) -> Entity:
+    """TTB with capability term added (same weight as TRUE)."""
+    candidates = allowed_entities(round_no, module)
+    best_entity: Optional[Entity] = None
+    best_score = -1e9
+    k = module.capability_index
+    for entity in candidates:
+        tm = trust_mean(state, entity.eid, k)
+        tv = trust_var(state, entity.eid, k)
+        cap = entity.capabilities[k]
+        predicted_utility = tm * module_difficulty(scenario, module, round_no)
+        trust_objective = tm + 0.03 * math.log1p(state.selected[entity.eid])
+        score = 0.22 * predicted_utility + 0.70 * trust_objective - 0.04 * tv + 0.55 * cap + preference_bonus(module, entity)
         if score > best_score:
             best_score = score
             best_entity = entity
@@ -822,6 +882,56 @@ def select_moo(scenario: Scenario, state: TrustState, round_no: int, module: Mod
     return best_entity
 
 
+def select_moo_cap(scenario: Scenario, state: TrustState, round_no: int, module: Module) -> Entity:
+    """MOO with capability objective added as fifth normalized objective."""
+    candidates = allowed_entities(round_no, module)
+    k = module.capability_index
+
+    objectives: List[Tuple[Entity, float, float, float, float, float]] = []
+    total_selections = max(1, sum(state.selected[e.eid] for e in candidates))
+
+    for entity in candidates:
+        tm = trust_mean(state, entity.eid, k)
+        tv = trust_var(state, entity.eid, k)
+        cap = entity.capabilities[k]
+        predicted_utility = tm * module_difficulty(scenario, module, round_no)
+        f1 = -predicted_utility
+        f2 = -tm
+        f3 = tv
+        f4 = state.selected[entity.eid] / total_selections
+        f5 = -cap
+        objectives.append((entity, f1, f2, f3, f4, f5))
+
+    vals = [list(t[i] for t in objectives) for i in range(1, 6)]
+    ranges = []
+    for v in vals:
+        lo, hi = min(v), max(v)
+        if hi - lo < 1e-12:
+            ranges.append((lo, 0.0))
+        else:
+            ranges.append((lo, hi - lo))
+
+    def norm(i: int, x: float) -> float:
+        lo, span = ranges[i]
+        return (x - lo) / span if span > 0 else 0.0
+
+    weights = [0.15, 0.40, 0.03, 0.18, 0.24]
+    z_star = [0.0, 0.0, 0.0, 0.0, 0.0]
+
+    best_entity: Optional[Entity] = None
+    best_dist = float("inf")
+    for entity, f1, f2, f3, f4, f5 in objectives:
+        nf = [norm(0, f1), norm(1, f2), norm(2, f3), norm(3, f4), norm(4, f5)]
+        dist = max(weights[i] * abs(nf[i] - z_star[i]) for i in range(5))
+        dist -= 0.015 * preference_bonus(module, entity)
+        if dist < best_dist:
+            best_dist = dist
+            best_entity = entity
+
+    assert best_entity is not None
+    return best_entity
+
+
 # ---------------------------------------------------------------------------
 # Module execution
 # ---------------------------------------------------------------------------
@@ -846,8 +956,16 @@ def execute_module(
         entity = select_true_minus_newcomer(rng, scenario, state, round_no, module)
     elif group == "Blind":
         entity = select_blind(rng, round_no, module)
+    elif group == "TRUE-no-cap":
+        entity = select_true_no_cap(rng, scenario, state, round_no, module)
     elif group == "TTB":
         entity = select_ttb(scenario, state, round_no, module)
+    elif group == "TTB-cap":
+        entity = select_ttb_cap(scenario, state, round_no, module)
+    elif group == "MOO":
+        entity = select_moo(scenario, state, round_no, module)
+    elif group == "MOO-cap":
+        entity = select_moo_cap(scenario, state, round_no, module)
     else:
         entity = select_moo(scenario, state, round_no, module)
 

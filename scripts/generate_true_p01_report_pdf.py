@@ -24,22 +24,28 @@ OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
 
 GROUP_COLORS = {
     "TRUE": "#1f77b4",
+    "TRUE-no-cap": "#aec7e8",
     "TRUE-C": "#ff7f0e",
     "TRUE-E": "#2ca02c",
     "TRUE-N": "#d62728",
     "Blind": "#9467bd",
     "TTB": "#8c564b",
+    "TTB-cap": "#bcbd22",
     "MOO": "#e377c2",
+    "MOO-cap": "#17becf",
 }
 
 GROUP_LABELS = {
     "TRUE": "TRUE",
+    "TRUE-no-cap": "TRUE-no-cap",
     "TRUE-C": "TRUE-C (no constraints)",
     "TRUE-E": "TRUE-E (no exploration)",
     "TRUE-N": "TRUE-N (no newcomer)",
     "Blind": "Blind",
     "TTB": "TTB",
-    "MOO": "MOO (Tchebycheff)",
+    "TTB-cap": "TTB-cap",
+    "MOO": "MOO",
+    "MOO-cap": "MOO-cap",
 }
 
 SCENARIO_LABELS = {

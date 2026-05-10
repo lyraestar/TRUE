@@ -16,10 +16,10 @@ Key P0/P1 changes from the previous round:
 
 ## Scenario Definitions
 
-- **Baseline**: Standard engineering collaboration with moderate observation noise.
 - **Safety-Critical**: High-stakes safety environment with harsher penalties and stronger error propagation.
-- **Utility-Trust-Misalignment**: Local phases where trusted incumbents underperform and low-history entities hold latent value.
 - **Observation-Manipulated**: Observation-contaminated environment where surface quality can diverge from true quality.
+- **Baseline**: Standard engineering collaboration with moderate observation noise.
+- **Utility-Trust-Misalignment**: Local phases where trusted incumbents underperform and low-history entities hold latent value.
 
 ## Group Definitions
 
@@ -34,193 +34,161 @@ Key P0/P1 changes from the previous round:
 
 | Scenario | Group | Cum.Utility | 95% CI | True Q | Surface Q | Fatal | Success | Gini | Collapse | A9 Delay | A8 Corr |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| Baseline | TRUE | 896.8 | [520.4, 1274.0] | 0.767 | 0.739 | 61.0 | 0.733 | 0.637 | 0.394 | 0.2 | 0.293 |
-| Baseline | TRUE-C | 1377.6 | [1037.2, 1739.0] | 0.799 | 0.767 | 60.7 | 0.735 | 0.679 | 0.408 | 0.9 | 0.000 |
-| Baseline | TRUE-E | 779.2 | [451.0, 1103.0] | 0.765 | 0.737 | 61.0 | 0.731 | 0.639 | 0.396 | 0.2 | 0.214 |
-| Baseline | TRUE-N | 1326.0 | [974.4, 1671.8] | 0.798 | 0.766 | 60.5 | 0.734 | 0.702 | 0.422 | 383.9 | 0.000 |
-| Baseline | Blind | -23753.6 | [-24089.4, -23428.6] | 0.343 | 0.402 | 208.2 | 0.310 | 0.529 | 0.317 | 6.8 | 0.000 |
-| Baseline | TTB | 174.8 | [-289.0, 599.6] | 0.764 | 0.741 | 64.7 | 0.720 | 0.736 | 0.442 | 859.7 | 0.009 |
-| Baseline | MOO | -547.4 | [-1097.4, -40.4] | 0.769 | 0.743 | 69.2 | 0.705 | 0.708 | 0.425 | 789.9 | 0.042 |
-| Safety-Critical | TRUE | -3079.0 | [-3677.6, -2488.6] | 0.797 | 0.720 | 40.4 | 0.818 | 0.661 | 0.418 | 0.5 | 0.163 |
-| Safety-Critical | TRUE-C | -1918.0 | [-2516.0, -1328.2] | 0.831 | 0.746 | 39.1 | 0.823 | 0.688 | 0.420 | 1.1 | 0.000 |
-| Safety-Critical | TRUE-E | -2895.4 | [-3402.0, -2418.0] | 0.799 | 0.721 | 39.8 | 0.819 | 0.657 | 0.414 | 0.6 | 0.183 |
-| Safety-Critical | TRUE-N | -1590.6 | [-2162.6, -1009.8] | 0.830 | 0.751 | 38.5 | 0.826 | 0.723 | 0.439 | 890.2 | 0.000 |
-| Safety-Critical | Blind | -53661.6 | [-54214.6, -53149.4] | 0.347 | 0.379 | 213.7 | 0.298 | 0.541 | 0.324 | 7.7 | 0.000 |
-| Safety-Critical | TTB | -5326.2 | [-6808.2, -4138.0] | 0.789 | 0.718 | 45.9 | 0.795 | 0.746 | 0.454 | 780.9 | 0.025 |
-| Safety-Critical | MOO | -5473.4 | [-6306.2, -4684.4] | 0.796 | 0.725 | 47.1 | 0.791 | 0.713 | 0.434 | 809.9 | 0.033 |
-| Utility-Trust-Misalignment | TRUE | 2345.4 | [2040.2, 2640.5] | 0.749 | 0.705 | 56.1 | 0.752 | 0.619 | 0.381 | 0.1 | 0.257 |
-| Utility-Trust-Misalignment | TRUE-C | 2954.1 | [2640.3, 3284.8] | 0.782 | 0.735 | 55.6 | 0.752 | 0.659 | 0.396 | 0.7 | 0.000 |
-| Utility-Trust-Misalignment | TRUE-E | 2473.9 | [2188.1, 2762.3] | 0.748 | 0.710 | 54.9 | 0.755 | 0.621 | 0.384 | 0.3 | 0.258 |
-| Utility-Trust-Misalignment | TRUE-N | 3332.8 | [3057.4, 3626.7] | 0.784 | 0.737 | 54.2 | 0.758 | 0.679 | 0.408 | 407.3 | 0.000 |
-| Utility-Trust-Misalignment | Blind | -21939.2 | [-22229.4, -21643.8] | 0.335 | 0.393 | 206.9 | 0.303 | 0.533 | 0.320 | 7.3 | 0.000 |
-| Utility-Trust-Misalignment | TTB | 934.2 | [74.9, 1645.6] | 0.741 | 0.707 | 62.4 | 0.725 | 0.733 | 0.440 | 799.8 | 0.056 |
-| Utility-Trust-Misalignment | MOO | 1442.8 | [865.3, 1954.9] | 0.751 | 0.715 | 62.3 | 0.730 | 0.700 | 0.420 | 771.4 | 0.068 |
-| Observation-Manipulated | TRUE | 2342.4 | [1975.2, 2704.8] | 0.772 | 0.644 | 50.4 | 0.774 | 0.606 | 0.365 | 0.0 | -0.011 |
-| Observation-Manipulated | TRUE-C | 2600.4 | [2256.0, 2933.6] | 0.806 | 0.653 | 51.1 | 0.773 | 0.657 | 0.394 | 0.7 | 0.000 |
-| Observation-Manipulated | TRUE-E | 2111.2 | [1774.0, 2455.2] | 0.769 | 0.645 | 51.8 | 0.770 | 0.612 | 0.368 | 0.0 | -0.032 |
-| Observation-Manipulated | TRUE-N | 2894.0 | [2521.6, 3264.0] | 0.810 | 0.659 | 50.5 | 0.776 | 0.664 | 0.399 | 6.0 | 0.000 |
-| Observation-Manipulated | Blind | -25392.8 | [-25722.4, -25050.4] | 0.336 | 0.440 | 198.6 | 0.330 | 0.517 | 0.310 | 7.5 | 0.000 |
-| Observation-Manipulated | TTB | 359.6 | [-676.0, 1235.2] | 0.754 | 0.634 | 58.4 | 0.744 | 0.739 | 0.444 | 860.6 | 0.001 |
-| Observation-Manipulated | MOO | -856.8 | [-1423.6, -334.4] | 0.753 | 0.637 | 65.9 | 0.722 | 0.635 | 0.381 | 517.5 | 0.003 |
+| Safety-Critical | TRUE | -3596.2 | [-4179.6, -3014.4] | 0.796 | 0.718 | 41.7 | 0.812 | 0.654 | 0.413 | 0.3 | 0.177 |
+| Safety-Critical | TRUE-no-cap | -5401.6 | [-5973.6, -4817.4] | 0.740 | 0.679 | 43.4 | 0.805 | 0.619 | 0.406 | 0.0 | 0.170 |
+| Safety-Critical | TTB | -5524.4 | [-7212.0, -4153.8] | 0.787 | 0.719 | 47.0 | 0.793 | 0.743 | 0.451 | 800.5 | 0.009 |
+| Safety-Critical | TTB-cap | -1797.4 | [-2406.8, -1219.6] | 0.830 | 0.742 | 39.1 | 0.823 | 0.746 | 0.454 | 999.0 | 0.000 |
+| Safety-Critical | MOO | -4532.0 | [-5238.8, -3816.2] | 0.801 | 0.724 | 44.7 | 0.800 | 0.724 | 0.440 | 850.0 | 0.041 |
+| Safety-Critical | MOO-cap | -3370.4 | [-4114.4, -2626.0] | 0.816 | 0.735 | 41.9 | 0.811 | 0.734 | 0.447 | 861.1 | 0.000 |
+| Safety-Critical | Blind | -53595.0 | [-54161.8, -53049.4] | 0.341 | 0.379 | 213.9 | 0.298 | 0.539 | 0.323 | 6.6 | 0.000 |
+| Observation-Manipulated | TRUE | 2102.4 | [1752.4, 2443.6] | 0.769 | 0.638 | 51.7 | 0.770 | 0.602 | 0.363 | 0.0 | -0.008 |
+| Observation-Manipulated | TRUE-no-cap | -1176.0 | [-1570.8, -780.4] | 0.635 | 0.572 | 58.9 | 0.741 | 0.470 | 0.297 | 0.0 | -0.011 |
+| Observation-Manipulated | TTB | 1110.0 | [464.8, 1646.0] | 0.759 | 0.638 | 55.4 | 0.757 | 0.738 | 0.443 | 831.3 | 0.006 |
+| Observation-Manipulated | TTB-cap | 2929.2 | [2570.0, 3255.6] | 0.808 | 0.660 | 49.8 | 0.778 | 0.737 | 0.442 | 999.0 | 0.000 |
+| Observation-Manipulated | MOO | -910.0 | [-1735.6, -230.8] | 0.757 | 0.638 | 66.6 | 0.720 | 0.646 | 0.388 | 544.4 | 0.008 |
+| Observation-Manipulated | MOO-cap | 1696.8 | [1234.0, 2140.4] | 0.791 | 0.653 | 54.6 | 0.761 | 0.693 | 0.416 | 859.8 | -0.012 |
+| Observation-Manipulated | Blind | -25003.2 | [-25364.4, -24659.6] | 0.338 | 0.438 | 197.2 | 0.338 | 0.519 | 0.312 | 6.0 | 0.000 |
+| Baseline | TRUE | 708.0 | [353.2, 1075.8] | 0.765 | 0.739 | 61.7 | 0.730 | 0.639 | 0.395 | 0.2 | 0.226 |
+| Baseline | TRUE-no-cap | -397.4 | [-802.0, 6.2] | 0.700 | 0.685 | 63.9 | 0.724 | 0.574 | 0.375 | 0.0 | 0.232 |
+| Baseline | TTB | -565.2 | [-1380.0, 160.4] | 0.759 | 0.735 | 67.4 | 0.708 | 0.737 | 0.443 | 801.6 | 0.034 |
+| Baseline | TTB-cap | 1811.8 | [1483.0, 2186.0] | 0.801 | 0.766 | 58.8 | 0.743 | 0.740 | 0.444 | 999.0 | 0.000 |
+| Baseline | MOO | -477.0 | [-940.8, -32.8] | 0.766 | 0.743 | 69.3 | 0.706 | 0.702 | 0.422 | 750.5 | 0.075 |
+| Baseline | MOO-cap | 542.6 | [-39.4, 1114.0] | 0.787 | 0.753 | 64.0 | 0.723 | 0.720 | 0.432 | 880.3 | 0.009 |
+| Baseline | Blind | -23858.4 | [-24178.0, -23543.4] | 0.344 | 0.403 | 208.9 | 0.308 | 0.527 | 0.316 | 5.9 | 0.000 |
+| Utility-Trust-Misalignment | TRUE | 2250.8 | [1927.9, 2570.9] | 0.745 | 0.707 | 56.1 | 0.751 | 0.616 | 0.379 | 0.1 | 0.311 |
+| Utility-Trust-Misalignment | TRUE-no-cap | 341.0 | [-2.8, 674.4] | 0.660 | 0.638 | 58.8 | 0.741 | 0.540 | 0.364 | 0.0 | 0.264 |
+| Utility-Trust-Misalignment | TTB | 686.8 | [-254.0, 1514.4] | 0.740 | 0.709 | 63.9 | 0.720 | 0.736 | 0.442 | 852.1 | 0.024 |
+| Utility-Trust-Misalignment | TTB-cap | 3216.1 | [2906.2, 3520.6] | 0.782 | 0.734 | 54.5 | 0.757 | 0.737 | 0.442 | 999.0 | 0.000 |
+| Utility-Trust-Misalignment | MOO | 818.0 | [209.7, 1388.4] | 0.746 | 0.709 | 64.9 | 0.719 | 0.694 | 0.416 | 771.1 | 0.084 |
+| Utility-Trust-Misalignment | MOO-cap | 2079.4 | [1667.0, 2511.5] | 0.765 | 0.722 | 58.6 | 0.740 | 0.716 | 0.430 | 849.8 | 0.078 |
+| Utility-Trust-Misalignment | Blind | -21858.2 | [-22104.5, -21593.7] | 0.336 | 0.391 | 205.9 | 0.305 | 0.533 | 0.320 | 6.5 | 0.000 |
 
 ## Scenario Conclusions
 
-### Baseline
-
-- TRUE vs Blind: cumulative utility diff = 24650.4; fatal errors diff = -147.2.
-- TRUE vs TTB: cumulative utility diff = 722.0; fatal errors diff = -3.7.
-- TRUE A9 first delay = 0.2; collapse index = 0.394.
-
 ### Safety-Critical
 
-- TRUE vs Blind: cumulative utility diff = 50582.6; fatal errors diff = -173.2.
-- TRUE vs TTB: cumulative utility diff = 2247.2; fatal errors diff = -5.5.
-- TRUE A9 first delay = 0.5; collapse index = 0.418.
-
-### Utility-Trust-Misalignment
-
-- TRUE vs Blind: cumulative utility diff = 24284.6; fatal errors diff = -150.8.
-- TRUE vs TTB: cumulative utility diff = 1411.2; fatal errors diff = -6.3.
-- TRUE A9 first delay = 0.1; collapse index = 0.381.
+- TRUE vs Blind: cumulative utility diff = 49998.8; fatal errors diff = -172.2.
+- TRUE vs TTB: cumulative utility diff = 1928.2; fatal errors diff = -5.4.
+- TRUE A9 first delay = 0.3; collapse index = 0.413.
 
 ### Observation-Manipulated
 
-- TRUE vs Blind: cumulative utility diff = 27735.2; fatal errors diff = -148.2.
-- TRUE vs TTB: cumulative utility diff = 1982.8; fatal errors diff = -8.0.
-- TRUE A9 first delay = 0.0; collapse index = 0.365.
+- TRUE vs Blind: cumulative utility diff = 27105.6; fatal errors diff = -145.5.
+- TRUE vs TTB: cumulative utility diff = 992.4; fatal errors diff = -3.7.
+- TRUE A9 first delay = 0.0; collapse index = 0.363.
+
+### Baseline
+
+- TRUE vs Blind: cumulative utility diff = 24566.4; fatal errors diff = -147.3.
+- TRUE vs TTB: cumulative utility diff = 1273.2; fatal errors diff = -5.7.
+- TRUE A9 first delay = 0.2; collapse index = 0.395.
+
+### Utility-Trust-Misalignment
+
+- TRUE vs Blind: cumulative utility diff = 24109.0; fatal errors diff = -149.7.
+- TRUE vs TTB: cumulative utility diff = 1564.0; fatal errors diff = -7.8.
+- TRUE A9 first delay = 0.1; collapse index = 0.379.
 
 ## Hypothesis Tests
 
 | Scenario | Hypothesis | Mean Diff | t | p_t | p_t(Bonf) | W | p_w | p_w(Bonf) | Cohen d |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| Baseline | TRUE_U > Blind_U | 24650.400 | 116.802 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 11.680 |
-| Baseline | TRUE_Fatal < Blind_Fatal | 147.150 | 121.144 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 12.114 |
-| Baseline | TRUE_U > TTB_U | 722.000 | 2.480 | 0.0131 | 1.0000 | 1879.000 | 0.0263 | 1.0000 | 0.248 |
-| Baseline | TRUE_Fatal < TTB_Fatal | 3.710 | 2.779 | 0.0055 | 0.6976 | 1740.500 | 0.0104 | 1.0000 | 0.278 |
-| Baseline | TRUE_U > MOO_U | 1444.200 | 4.315 | 0.0000 | 0.0020 | 1373.500 | 0.0001 | 0.0096 | 0.431 |
-| Baseline | TRUE_Fatal < MOO_Fatal | 8.180 | 5.128 | 0.0000 | 0.0000 | 1097.000 | 0.0000 | 0.0005 | 0.513 |
-| Baseline | TRUE_Collapse < TTB_Collapse | 0.048 | 21.074 | 0.0000 | 0.0000 | 9.000 | 0.0000 | 0.0000 | 2.107 |
-| Baseline | TRUE_A9 < Blind_A9 | 6.530 | 9.155 | 0.0000 | 0.0000 | 47.000 | 0.0000 | 0.0000 | 0.915 |
-| Baseline | TRUE-C_U > Blind_U | 25131.200 | 122.175 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 12.217 |
-| Baseline | TRUE-C_Fatal < Blind_Fatal | 147.420 | 114.162 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 11.416 |
-| Baseline | TRUE-C_U > TTB_U | 1202.800 | 4.605 | 0.0000 | 0.0005 | 1374.500 | 0.0001 | 0.0098 | 0.460 |
-| Baseline | TRUE-C_Fatal < TTB_Fatal | 3.980 | 3.372 | 0.0007 | 0.0956 | 1571.000 | 0.0057 | 0.7257 | 0.337 |
-| Baseline | TRUE-C_U > MOO_U | 1925.000 | 5.945 | 0.0000 | 0.0000 | 995.500 | 0.0000 | 0.0000 | 0.595 |
-| Baseline | TRUE-C_Fatal < MOO_Fatal | 8.450 | 5.502 | 0.0000 | 0.0000 | 937.000 | 0.0000 | 0.0001 | 0.550 |
-| Baseline | TRUE-C_Collapse < TTB_Collapse | 0.035 | 19.780 | 0.0000 | 0.0000 | 32.000 | 0.0000 | 0.0000 | 1.978 |
-| Baseline | TRUE-C_A9 < Blind_A9 | 5.880 | 7.914 | 0.0000 | 0.0000 | 240.500 | 0.0000 | 0.0000 | 0.791 |
-| Baseline | TRUE-E_U > Blind_U | 24532.800 | 128.186 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 12.819 |
-| Baseline | TRUE-E_Fatal < Blind_Fatal | 147.170 | 124.015 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 12.401 |
-| Baseline | TRUE-E_U > TTB_U | 604.400 | 2.309 | 0.0209 | 1.0000 | 2110.500 | 0.2033 | 1.0000 | 0.231 |
-| Baseline | TRUE-E_Fatal < TTB_Fatal | 3.730 | 3.101 | 0.0019 | 0.2471 | 1659.500 | 0.0213 | 1.0000 | 0.310 |
-| Baseline | TRUE-E_U > MOO_U | 1326.600 | 4.439 | 0.0000 | 0.0012 | 1335.500 | 0.0000 | 0.0055 | 0.444 |
-| Baseline | TRUE-E_Fatal < MOO_Fatal | 8.200 | 5.682 | 0.0000 | 0.0000 | 946.000 | 0.0000 | 0.0001 | 0.568 |
-| Baseline | TRUE-E_Collapse < TTB_Collapse | 0.046 | 18.883 | 0.0000 | 0.0000 | 6.000 | 0.0000 | 0.0000 | 1.888 |
-| Baseline | TRUE-E_A9 < Blind_A9 | 6.560 | 9.236 | 0.0000 | 0.0000 | 13.000 | 0.0000 | 0.0000 | 0.924 |
-| Baseline | TRUE-N_U > Blind_U | 25079.600 | 112.232 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 11.223 |
-| Baseline | TRUE-N_Fatal < Blind_Fatal | 147.630 | 107.736 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 10.774 |
-| Baseline | TRUE-N_U > TTB_U | 1151.200 | 4.166 | 0.0000 | 0.0040 | 1314.000 | 0.0001 | 0.0065 | 0.417 |
-| Baseline | TRUE-N_Fatal < TTB_Fatal | 4.190 | 3.286 | 0.0010 | 0.1300 | 1470.500 | 0.0011 | 0.1426 | 0.329 |
-| Baseline | TRUE-N_U > MOO_U | 1873.400 | 5.956 | 0.0000 | 0.0000 | 1002.500 | 0.0000 | 0.0000 | 0.596 |
-| Baseline | TRUE-N_Fatal < MOO_Fatal | 8.660 | 5.810 | 0.0000 | 0.0000 | 1031.000 | 0.0000 | 0.0000 | 0.581 |
-| Baseline | TRUE-N_Collapse < TTB_Collapse | 0.020 | 9.411 | 0.0000 | 0.0000 | 400.000 | 0.0000 | 0.0000 | 0.941 |
-| Baseline | TRUE-N_A9 < Blind_A9 | -377.150 | -8.126 | 0.0000 | 0.0000 | 274.500 | 0.0000 | 0.0000 | -0.813 |
-| Observation-Manipulated | TRUE_U > Blind_U | 27735.200 | 125.991 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 12.599 |
-| Observation-Manipulated | TRUE_Fatal < Blind_Fatal | 148.170 | 123.001 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 12.300 |
-| Observation-Manipulated | TRUE_U > TTB_U | 1982.800 | 3.922 | 0.0001 | 0.0112 | 1381.000 | 0.0001 | 0.0172 | 0.392 |
-| Observation-Manipulated | TRUE_Fatal < TTB_Fatal | 8.010 | 3.391 | 0.0007 | 0.0891 | 1404.000 | 0.0011 | 0.1469 | 0.339 |
-| Observation-Manipulated | TRUE_U > MOO_U | 3199.200 | 9.846 | 0.0000 | 0.0000 | 400.000 | 0.0000 | 0.0000 | 0.985 |
-| Observation-Manipulated | TRUE_Fatal < MOO_Fatal | 15.460 | 10.506 | 0.0000 | 0.0000 | 249.000 | 0.0000 | 0.0000 | 1.051 |
-| Observation-Manipulated | TRUE_Collapse < TTB_Collapse | 0.079 | 46.622 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 4.662 |
-| Observation-Manipulated | TRUE_A9 < Blind_A9 | 7.470 | 10.591 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 1.059 |
-| Observation-Manipulated | TRUE-C_U > Blind_U | 27993.200 | 121.106 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 12.111 |
-| Observation-Manipulated | TRUE-C_Fatal < Blind_Fatal | 147.470 | 117.694 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 11.769 |
-| Observation-Manipulated | TRUE-C_U > TTB_U | 2240.800 | 4.279 | 0.0000 | 0.0024 | 1168.500 | 0.0000 | 0.0004 | 0.428 |
-| Observation-Manipulated | TRUE-C_Fatal < TTB_Fatal | 7.310 | 2.969 | 0.0030 | 0.3829 | 1469.500 | 0.0061 | 0.7783 | 0.297 |
-| Observation-Manipulated | TRUE-C_U > MOO_U | 3457.200 | 11.671 | 0.0000 | 0.0000 | 160.000 | 0.0000 | 0.0000 | 1.167 |
-| Observation-Manipulated | TRUE-C_Fatal < MOO_Fatal | 14.760 | 10.472 | 0.0000 | 0.0000 | 305.500 | 0.0000 | 0.0000 | 1.047 |
-| Observation-Manipulated | TRUE-C_Collapse < TTB_Collapse | 0.049 | 27.824 | 0.0000 | 0.0000 | 3.000 | 0.0000 | 0.0000 | 2.782 |
-| Observation-Manipulated | TRUE-C_A9 < Blind_A9 | 6.780 | 9.547 | 0.0000 | 0.0000 | 79.500 | 0.0000 | 0.0000 | 0.955 |
-| Observation-Manipulated | TRUE-E_U > Blind_U | 27504.000 | 119.069 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 11.907 |
-| Observation-Manipulated | TRUE-E_Fatal < Blind_Fatal | 146.850 | 116.653 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 11.665 |
-| Observation-Manipulated | TRUE-E_U > TTB_U | 1751.600 | 3.307 | 0.0009 | 0.1205 | 1673.000 | 0.0034 | 0.4346 | 0.331 |
-| Observation-Manipulated | TRUE-E_Fatal < TTB_Fatal | 6.690 | 2.703 | 0.0069 | 0.8798 | 1738.500 | 0.0444 | 1.0000 | 0.270 |
-| Observation-Manipulated | TRUE-E_U > MOO_U | 2968.000 | 9.187 | 0.0000 | 0.0000 | 412.000 | 0.0000 | 0.0000 | 0.919 |
-| Observation-Manipulated | TRUE-E_Fatal < MOO_Fatal | 14.140 | 9.620 | 0.0000 | 0.0000 | 388.500 | 0.0000 | 0.0000 | 0.962 |
-| Observation-Manipulated | TRUE-E_Collapse < TTB_Collapse | 0.075 | 39.860 | 0.0000 | 0.0000 | 1.000 | 0.0000 | 0.0000 | 3.986 |
-| Observation-Manipulated | TRUE-E_A9 < Blind_A9 | 7.460 | 10.573 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 1.057 |
-| Observation-Manipulated | TRUE-N_U > Blind_U | 28286.800 | 117.953 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 11.795 |
-| Observation-Manipulated | TRUE-N_Fatal < Blind_Fatal | 148.150 | 114.408 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 11.441 |
-| Observation-Manipulated | TRUE-N_U > TTB_U | 2534.400 | 5.178 | 0.0000 | 0.0000 | 850.500 | 0.0000 | 0.0000 | 0.518 |
-| Observation-Manipulated | TRUE-N_Fatal < TTB_Fatal | 7.990 | 3.510 | 0.0004 | 0.0573 | 1245.000 | 0.0001 | 0.0156 | 0.351 |
-| Observation-Manipulated | TRUE-N_U > MOO_U | 3750.800 | 11.246 | 0.0000 | 0.0000 | 233.500 | 0.0000 | 0.0000 | 1.125 |
-| Observation-Manipulated | TRUE-N_Fatal < MOO_Fatal | 15.440 | 10.277 | 0.0000 | 0.0000 | 281.000 | 0.0000 | 0.0000 | 1.028 |
-| Observation-Manipulated | TRUE-N_Collapse < TTB_Collapse | 0.045 | 24.348 | 0.0000 | 0.0000 | 19.000 | 0.0000 | 0.0000 | 2.435 |
-| Observation-Manipulated | TRUE-N_A9 < Blind_A9 | 1.520 | 1.253 | 0.2101 | 1.0000 | 1390.000 | 0.0082 | 1.0000 | 0.125 |
-| Safety-Critical | TRUE_U > Blind_U | 50582.600 | 153.220 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 15.322 |
-| Safety-Critical | TRUE_Fatal < Blind_Fatal | 173.250 | 134.294 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 13.429 |
-| Safety-Critical | TRUE_U > TTB_U | 2247.200 | 2.898 | 0.0038 | 0.4810 | 1680.500 | 0.0056 | 0.7109 | 0.290 |
-| Safety-Critical | TRUE_Fatal < TTB_Fatal | 5.490 | 2.811 | 0.0049 | 0.6319 | 1593.500 | 0.0108 | 1.0000 | 0.281 |
-| Safety-Critical | TRUE_U > MOO_U | 2394.400 | 4.869 | 0.0000 | 0.0001 | 1190.000 | 0.0000 | 0.0006 | 0.487 |
-| Safety-Critical | TRUE_Fatal < MOO_Fatal | 6.710 | 4.936 | 0.0000 | 0.0001 | 1240.500 | 0.0000 | 0.0013 | 0.494 |
-| Safety-Critical | TRUE_Collapse < TTB_Collapse | 0.036 | 17.391 | 0.0000 | 0.0000 | 12.000 | 0.0000 | 0.0000 | 1.739 |
-| Safety-Critical | TRUE_A9 < Blind_A9 | 7.250 | 9.610 | 0.0000 | 0.0000 | 39.500 | 0.0000 | 0.0000 | 0.961 |
-| Safety-Critical | TRUE-C_U > Blind_U | 51743.600 | 131.477 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 13.148 |
-| Safety-Critical | TRUE-C_Fatal < Blind_Fatal | 174.570 | 126.651 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 12.665 |
-| Safety-Critical | TRUE-C_U > TTB_U | 3408.200 | 4.605 | 0.0000 | 0.0005 | 970.000 | 0.0000 | 0.0000 | 0.460 |
-| Safety-Critical | TRUE-C_Fatal < TTB_Fatal | 6.810 | 3.766 | 0.0002 | 0.0213 | 1141.000 | 0.0000 | 0.0018 | 0.377 |
-| Safety-Critical | TRUE-C_U > MOO_U | 3555.400 | 7.450 | 0.0000 | 0.0000 | 697.000 | 0.0000 | 0.0000 | 0.745 |
-| Safety-Critical | TRUE-C_Fatal < MOO_Fatal | 8.030 | 6.393 | 0.0000 | 0.0000 | 805.500 | 0.0000 | 0.0000 | 0.639 |
-| Safety-Critical | TRUE-C_Collapse < TTB_Collapse | 0.033 | 19.310 | 0.0000 | 0.0000 | 9.000 | 0.0000 | 0.0000 | 1.931 |
-| Safety-Critical | TRUE-C_A9 < Blind_A9 | 6.620 | 8.691 | 0.0000 | 0.0000 | 99.000 | 0.0000 | 0.0000 | 0.869 |
-| Safety-Critical | TRUE-E_U > Blind_U | 50766.200 | 155.050 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 15.505 |
-| Safety-Critical | TRUE-E_Fatal < Blind_Fatal | 173.840 | 130.021 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 13.002 |
-| Safety-Critical | TRUE-E_U > TTB_U | 2430.800 | 3.500 | 0.0005 | 0.0596 | 1402.500 | 0.0001 | 0.0145 | 0.350 |
-| Safety-Critical | TRUE-E_Fatal < TTB_Fatal | 6.080 | 3.469 | 0.0005 | 0.0669 | 1285.500 | 0.0001 | 0.0111 | 0.347 |
-| Safety-Critical | TRUE-E_U > MOO_U | 2578.000 | 5.625 | 0.0000 | 0.0000 | 1009.500 | 0.0000 | 0.0000 | 0.563 |
-| Safety-Critical | TRUE-E_Fatal < MOO_Fatal | 7.300 | 6.061 | 0.0000 | 0.0000 | 844.500 | 0.0000 | 0.0000 | 0.606 |
-| Safety-Critical | TRUE-E_Collapse < TTB_Collapse | 0.039 | 17.592 | 0.0000 | 0.0000 | 3.000 | 0.0000 | 0.0000 | 1.759 |
-| Safety-Critical | TRUE-E_A9 < Blind_A9 | 7.140 | 9.382 | 0.0000 | 0.0000 | 39.000 | 0.0000 | 0.0000 | 0.938 |
-| Safety-Critical | TRUE-N_U > Blind_U | 52071.000 | 141.024 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 14.102 |
-| Safety-Critical | TRUE-N_Fatal < Blind_Fatal | 175.140 | 133.184 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 13.318 |
-| Safety-Critical | TRUE-N_U > TTB_U | 3735.600 | 4.603 | 0.0000 | 0.0005 | 989.500 | 0.0000 | 0.0000 | 0.460 |
-| Safety-Critical | TRUE-N_Fatal < TTB_Fatal | 7.380 | 3.686 | 0.0002 | 0.0291 | 1178.500 | 0.0001 | 0.0090 | 0.369 |
-| Safety-Critical | TRUE-N_U > MOO_U | 3882.800 | 8.152 | 0.0000 | 0.0000 | 631.000 | 0.0000 | 0.0000 | 0.815 |
-| Safety-Critical | TRUE-N_Fatal < MOO_Fatal | 8.600 | 6.896 | 0.0000 | 0.0000 | 729.500 | 0.0000 | 0.0000 | 0.690 |
-| Safety-Critical | TRUE-N_Collapse < TTB_Collapse | 0.014 | 7.549 | 0.0000 | 0.0000 | 671.000 | 0.0000 | 0.0000 | 0.755 |
-| Safety-Critical | TRUE-N_A9 < Blind_A9 | -882.450 | -28.186 | 0.0000 | 0.0000 | 29.000 | 0.0000 | 0.0000 | -2.819 |
-| Utility-Trust-Misalignment | TRUE_U > Blind_U | 24284.600 | 118.415 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 11.842 |
-| Utility-Trust-Misalignment | TRUE_Fatal < Blind_Fatal | 150.750 | 107.400 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 10.740 |
-| Utility-Trust-Misalignment | TRUE_U > TTB_U | 1411.200 | 3.319 | 0.0009 | 0.1158 | 1692.500 | 0.0042 | 0.5382 | 0.332 |
-| Utility-Trust-Misalignment | TRUE_Fatal < TTB_Fatal | 6.270 | 3.084 | 0.0020 | 0.2612 | 1721.500 | 0.0126 | 1.0000 | 0.308 |
-| Utility-Trust-Misalignment | TRUE_U > MOO_U | 902.600 | 2.971 | 0.0030 | 0.3794 | 1742.500 | 0.0071 | 0.9132 | 0.297 |
-| Utility-Trust-Misalignment | TRUE_Fatal < MOO_Fatal | 6.180 | 4.210 | 0.0000 | 0.0033 | 1274.000 | 0.0001 | 0.0093 | 0.421 |
-| Utility-Trust-Misalignment | TRUE_Collapse < TTB_Collapse | 0.059 | 23.207 | 0.0000 | 0.0000 | 5.000 | 0.0000 | 0.0000 | 2.321 |
-| Utility-Trust-Misalignment | TRUE_A9 < Blind_A9 | 7.150 | 9.645 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 0.964 |
-| Utility-Trust-Misalignment | TRUE-C_U > Blind_U | 24893.300 | 128.532 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 12.853 |
-| Utility-Trust-Misalignment | TRUE-C_Fatal < Blind_Fatal | 151.270 | 117.596 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 11.760 |
-| Utility-Trust-Misalignment | TRUE-C_U > TTB_U | 2019.900 | 4.718 | 0.0000 | 0.0003 | 1053.500 | 0.0000 | 0.0001 | 0.472 |
-| Utility-Trust-Misalignment | TRUE-C_Fatal < TTB_Fatal | 6.790 | 3.295 | 0.0010 | 0.1262 | 1425.500 | 0.0036 | 0.4597 | 0.329 |
-| Utility-Trust-Misalignment | TRUE-C_U > MOO_U | 1511.300 | 4.792 | 0.0000 | 0.0002 | 1125.500 | 0.0000 | 0.0003 | 0.479 |
-| Utility-Trust-Misalignment | TRUE-C_Fatal < MOO_Fatal | 6.700 | 4.303 | 0.0000 | 0.0022 | 1202.000 | 0.0000 | 0.0030 | 0.430 |
-| Utility-Trust-Misalignment | TRUE-C_Collapse < TTB_Collapse | 0.044 | 23.320 | 0.0000 | 0.0000 | 8.000 | 0.0000 | 0.0000 | 2.332 |
-| Utility-Trust-Misalignment | TRUE-C_A9 < Blind_A9 | 6.590 | 8.749 | 0.0000 | 0.0000 | 143.000 | 0.0000 | 0.0000 | 0.875 |
-| Utility-Trust-Misalignment | TRUE-E_U > Blind_U | 24413.100 | 133.220 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 13.322 |
-| Utility-Trust-Misalignment | TRUE-E_Fatal < Blind_Fatal | 152.000 | 121.196 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 12.120 |
-| Utility-Trust-Misalignment | TRUE-E_U > TTB_U | 1539.700 | 3.518 | 0.0004 | 0.0556 | 1541.000 | 0.0007 | 0.0917 | 0.352 |
-| Utility-Trust-Misalignment | TRUE-E_Fatal < TTB_Fatal | 7.520 | 3.710 | 0.0002 | 0.0266 | 1190.000 | 0.0002 | 0.0281 | 0.371 |
-| Utility-Trust-Misalignment | TRUE-E_U > MOO_U | 1031.100 | 3.833 | 0.0001 | 0.0162 | 1451.500 | 0.0002 | 0.0286 | 0.383 |
-| Utility-Trust-Misalignment | TRUE-E_Fatal < MOO_Fatal | 7.430 | 5.455 | 0.0000 | 0.0000 | 904.000 | 0.0000 | 0.0000 | 0.546 |
-| Utility-Trust-Misalignment | TRUE-E_Collapse < TTB_Collapse | 0.057 | 24.274 | 0.0000 | 0.0000 | 2.000 | 0.0000 | 0.0000 | 2.427 |
-| Utility-Trust-Misalignment | TRUE-E_A9 < Blind_A9 | 7.010 | 9.425 | 0.0000 | 0.0000 | 24.500 | 0.0000 | 0.0000 | 0.942 |
-| Utility-Trust-Misalignment | TRUE-N_U > Blind_U | 25272.000 | 143.210 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 14.321 |
-| Utility-Trust-Misalignment | TRUE-N_Fatal < Blind_Fatal | 152.670 | 119.695 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 11.969 |
-| Utility-Trust-Misalignment | TRUE-N_U > TTB_U | 2398.600 | 5.740 | 0.0000 | 0.0000 | 698.000 | 0.0000 | 0.0000 | 0.574 |
-| Utility-Trust-Misalignment | TRUE-N_Fatal < TTB_Fatal | 8.190 | 4.092 | 0.0000 | 0.0055 | 1144.500 | 0.0000 | 0.0020 | 0.409 |
-| Utility-Trust-Misalignment | TRUE-N_U > MOO_U | 1890.000 | 6.550 | 0.0000 | 0.0000 | 700.500 | 0.0000 | 0.0000 | 0.655 |
-| Utility-Trust-Misalignment | TRUE-N_Fatal < MOO_Fatal | 8.100 | 5.753 | 0.0000 | 0.0000 | 836.500 | 0.0000 | 0.0000 | 0.575 |
-| Utility-Trust-Misalignment | TRUE-N_Collapse < TTB_Collapse | 0.033 | 12.698 | 0.0000 | 0.0000 | 164.000 | 0.0000 | 0.0000 | 1.270 |
-| Utility-Trust-Misalignment | TRUE-N_A9 < Blind_A9 | -400.030 | -8.382 | 0.0000 | 0.0000 | 316.000 | 0.0000 | 0.0000 | -0.838 |
+| Baseline | TRUE_U > TTB_U | 1273.200 | 2.832 | 0.0046 | 0.4435 | 1886.500 | 0.0281 | 1.0000 | 0.283 |
+| Baseline | TRUE_Fatal < TTB_Fatal | 5.690 | 2.773 | 0.0056 | 0.5335 | 1820.000 | 0.0222 | 1.0000 | 0.277 |
+| Baseline | TRUE_U > TTB-cap_U | -1103.800 | -4.419 | 0.0000 | 0.0009 | 1351.000 | 0.0001 | 0.0052 | -0.442 |
+| Baseline | TRUE_Fatal < TTB-cap_Fatal | -2.910 | -2.662 | 0.0078 | 0.7461 | 1768.000 | 0.0286 | 1.0000 | -0.266 |
+| Baseline | TRUE_U > MOO_U | 1185.000 | 4.126 | 0.0000 | 0.0035 | 1430.500 | 0.0002 | 0.0161 | 0.413 |
+| Baseline | TRUE_Fatal < MOO_Fatal | 7.610 | 5.392 | 0.0000 | 0.0000 | 943.500 | 0.0000 | 0.0001 | 0.539 |
+| Baseline | TRUE_U > MOO-cap_U | 165.400 | 0.491 | 0.6235 | 1.0000 | 2404.500 | 0.8056 | 1.0000 | 0.049 |
+| Baseline | TRUE_Fatal < MOO-cap_Fatal | 2.280 | 1.522 | 0.1280 | 1.0000 | 2026.500 | 0.3467 | 1.0000 | 0.152 |
+| Baseline | TRUE_U > Blind_U | 24566.400 | 117.378 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 11.738 |
+| Baseline | TRUE_Fatal < Blind_Fatal | 147.270 | 109.757 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 10.976 |
+| Baseline | TRUE_Collapse < TTB_Collapse | 0.048 | 23.000 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 2.300 |
+| Baseline | TRUE_A9 < Blind_A9 | 5.740 | 8.955 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 0.896 |
+| Baseline | TRUE-no-cap_U > TTB_U | 167.800 | 0.355 | 0.7228 | 1.0000 | 2228.500 | 0.3896 | 1.0000 | 0.035 |
+| Baseline | TRUE-no-cap_Fatal < TTB_Fatal | 3.490 | 1.654 | 0.0981 | 1.0000 | 2113.500 | 0.5366 | 1.0000 | 0.165 |
+| Baseline | TRUE-no-cap_U > TTB-cap_U | -2209.200 | -8.296 | 0.0000 | 0.0000 | 666.500 | 0.0000 | 0.0000 | -0.830 |
+| Baseline | TRUE-no-cap_Fatal < TTB-cap_Fatal | -5.110 | -4.280 | 0.0000 | 0.0018 | 1295.500 | 0.0001 | 0.0096 | -0.428 |
+| Baseline | TRUE-no-cap_U > MOO_U | 79.600 | 0.251 | 0.8016 | 1.0000 | 2418.000 | 0.7129 | 1.0000 | 0.025 |
+| Baseline | TRUE-no-cap_Fatal < MOO_Fatal | 5.410 | 3.461 | 0.0005 | 0.0517 | 1601.500 | 0.0079 | 0.7617 | 0.346 |
+| Baseline | TRUE-no-cap_U > MOO-cap_U | -940.000 | -2.742 | 0.0061 | 0.5866 | 1510.500 | 0.0008 | 0.0731 | -0.274 |
+| Baseline | TRUE-no-cap_Fatal < MOO-cap_Fatal | 0.080 | 0.052 | 0.9582 | 1.0000 | 2210.500 | 0.6676 | 1.0000 | 0.005 |
+| Baseline | TRUE-no-cap_U > Blind_U | 23461.000 | 102.587 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 10.259 |
+| Baseline | TRUE-no-cap_Fatal < Blind_Fatal | 145.070 | 103.716 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 10.372 |
+| Baseline | TRUE-no-cap_Collapse < TTB_Collapse | 0.067 | 23.680 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 2.368 |
+| Baseline | TRUE-no-cap_A9 < Blind_A9 | 5.890 | 9.157 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 0.916 |
+| Observation-Manipulated | TRUE_U > TTB_U | 992.400 | 2.806 | 0.0050 | 0.4819 | 1688.500 | 0.0060 | 0.5807 | 0.281 |
+| Observation-Manipulated | TRUE_Fatal < TTB_Fatal | 3.660 | 2.540 | 0.0111 | 1.0000 | 1644.000 | 0.0124 | 1.0000 | 0.254 |
+| Observation-Manipulated | TRUE_U > TTB-cap_U | -826.800 | -3.444 | 0.0006 | 0.0550 | 1546.500 | 0.0018 | 0.1767 | -0.344 |
+| Observation-Manipulated | TRUE_Fatal < TTB-cap_Fatal | -1.910 | -2.022 | 0.0432 | 1.0000 | 1745.500 | 0.0663 | 1.0000 | -0.202 |
+| Observation-Manipulated | TRUE_U > MOO_U | 3012.400 | 7.583 | 0.0000 | 0.0000 | 433.500 | 0.0000 | 0.0000 | 0.758 |
+| Observation-Manipulated | TRUE_Fatal < MOO_Fatal | 14.870 | 8.381 | 0.0000 | 0.0000 | 334.500 | 0.0000 | 0.0000 | 0.838 |
+| Observation-Manipulated | TRUE_U > MOO-cap_U | 405.600 | 1.529 | 0.1264 | 1.0000 | 2044.000 | 0.2315 | 1.0000 | 0.153 |
+| Observation-Manipulated | TRUE_Fatal < MOO-cap_Fatal | 2.860 | 2.601 | 0.0093 | 0.8930 | 1779.000 | 0.0220 | 1.0000 | 0.260 |
+| Observation-Manipulated | TRUE_U > Blind_U | 27105.600 | 116.149 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 11.615 |
+| Observation-Manipulated | TRUE_Fatal < Blind_Fatal | 145.500 | 115.097 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 11.510 |
+| Observation-Manipulated | TRUE_Collapse < TTB_Collapse | 0.080 | 44.103 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 4.410 |
+| Observation-Manipulated | TRUE_A9 < Blind_A9 | 6.020 | 10.552 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 1.055 |
+| Observation-Manipulated | TRUE-no-cap_U > TTB_U | -2286.000 | -6.628 | 0.0000 | 0.0000 | 597.000 | 0.0000 | 0.0000 | -0.663 |
+| Observation-Manipulated | TRUE-no-cap_Fatal < TTB_Fatal | -3.530 | -2.556 | 0.0106 | 1.0000 | 1341.000 | 0.0002 | 0.0187 | -0.256 |
+| Observation-Manipulated | TRUE-no-cap_U > TTB-cap_U | -4105.200 | -15.173 | 0.0000 | 0.0000 | 68.500 | 0.0000 | 0.0000 | -1.517 |
+| Observation-Manipulated | TRUE-no-cap_Fatal < TTB-cap_Fatal | -9.100 | -8.579 | 0.0000 | 0.0000 | 515.000 | 0.0000 | 0.0000 | -0.858 |
+| Observation-Manipulated | TRUE-no-cap_U > MOO_U | -266.000 | -0.634 | 0.5262 | 1.0000 | 1916.000 | 0.0710 | 1.0000 | -0.063 |
+| Observation-Manipulated | TRUE-no-cap_Fatal < MOO_Fatal | 7.680 | 4.104 | 0.0000 | 0.0039 | 1370.500 | 0.0001 | 0.0111 | 0.410 |
+| Observation-Manipulated | TRUE-no-cap_U > MOO-cap_U | -2872.800 | -10.567 | 0.0000 | 0.0000 | 372.000 | 0.0000 | 0.0000 | -1.057 |
+| Observation-Manipulated | TRUE-no-cap_Fatal < MOO-cap_Fatal | -4.330 | -3.773 | 0.0002 | 0.0155 | 1225.000 | 0.0001 | 0.0086 | -0.377 |
+| Observation-Manipulated | TRUE-no-cap_U > Blind_U | 23827.200 | 99.539 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 9.954 |
+| Observation-Manipulated | TRUE-no-cap_Fatal < Blind_Fatal | 138.310 | 107.234 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 10.723 |
+| Observation-Manipulated | TRUE-no-cap_Collapse < TTB_Collapse | 0.146 | 68.140 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 6.814 |
+| Observation-Manipulated | TRUE-no-cap_A9 < Blind_A9 | 6.020 | 10.552 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 1.055 |
+| Safety-Critical | TRUE_U > TTB_U | 1928.200 | 2.386 | 0.0170 | 1.0000 | 2008.500 | 0.0758 | 1.0000 | 0.239 |
+| Safety-Critical | TRUE_Fatal < TTB_Fatal | 5.360 | 2.595 | 0.0095 | 0.9092 | 1795.500 | 0.0177 | 1.0000 | 0.259 |
+| Safety-Critical | TRUE_U > TTB-cap_U | -1798.800 | -4.918 | 0.0000 | 0.0001 | 1225.500 | 0.0000 | 0.0008 | -0.492 |
+| Safety-Critical | TRUE_Fatal < TTB-cap_Fatal | -2.540 | -2.820 | 0.0048 | 0.4608 | 1480.000 | 0.0045 | 0.4363 | -0.282 |
+| Safety-Critical | TRUE_U > MOO_U | 935.800 | 2.043 | 0.0411 | 1.0000 | 2004.000 | 0.0732 | 1.0000 | 0.204 |
+| Safety-Critical | TRUE_Fatal < MOO_Fatal | 3.020 | 2.602 | 0.0093 | 0.8897 | 1710.500 | 0.0240 | 1.0000 | 0.260 |
+| Safety-Critical | TRUE_U > MOO-cap_U | -225.800 | -0.461 | 0.6449 | 1.0000 | 2214.000 | 0.2849 | 1.0000 | -0.046 |
+| Safety-Critical | TRUE_Fatal < MOO-cap_Fatal | 0.240 | 0.206 | 0.8369 | 1.0000 | 2287.000 | 0.7474 | 1.0000 | 0.021 |
+| Safety-Critical | TRUE_U > Blind_U | 49998.800 | 147.664 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 14.766 |
+| Safety-Critical | TRUE_Fatal < Blind_Fatal | 172.210 | 137.044 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 13.704 |
+| Safety-Critical | TRUE_Collapse < TTB_Collapse | 0.039 | 18.883 | 0.0000 | 0.0000 | 26.000 | 0.0000 | 0.0000 | 1.888 |
+| Safety-Critical | TRUE_A9 < Blind_A9 | 6.230 | 9.243 | 0.0000 | 0.0000 | 19.500 | 0.0000 | 0.0000 | 0.924 |
+| Safety-Critical | TRUE-no-cap_U > TTB_U | 122.800 | 0.155 | 0.8772 | 1.0000 | 2053.000 | 0.1046 | 1.0000 | 0.015 |
+| Safety-Critical | TRUE-no-cap_Fatal < TTB_Fatal | 3.620 | 1.777 | 0.0755 | 1.0000 | 1933.500 | 0.2595 | 1.0000 | 0.178 |
+| Safety-Critical | TRUE-no-cap_U > TTB-cap_U | -3604.200 | -8.213 | 0.0000 | 0.0000 | 665.500 | 0.0000 | 0.0000 | -0.821 |
+| Safety-Critical | TRUE-no-cap_Fatal < TTB-cap_Fatal | -4.280 | -3.828 | 0.0001 | 0.0124 | 1385.000 | 0.0004 | 0.0346 | -0.383 |
+| Safety-Critical | TRUE-no-cap_U > MOO_U | -869.600 | -2.061 | 0.0393 | 1.0000 | 1920.000 | 0.0375 | 1.0000 | -0.206 |
+| Safety-Critical | TRUE-no-cap_Fatal < MOO_Fatal | 1.280 | 1.112 | 0.2660 | 1.0000 | 1972.500 | 0.2537 | 1.0000 | 0.111 |
+| Safety-Critical | TRUE-no-cap_U > MOO-cap_U | -2031.200 | -4.108 | 0.0000 | 0.0038 | 1161.000 | 0.0000 | 0.0003 | -0.411 |
+| Safety-Critical | TRUE-no-cap_Fatal < MOO-cap_Fatal | -1.500 | -1.221 | 0.2220 | 1.0000 | 1851.000 | 0.0813 | 1.0000 | -0.122 |
+| Safety-Critical | TRUE-no-cap_U > Blind_U | 48193.400 | 120.548 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 12.055 |
+| Safety-Critical | TRUE-no-cap_Fatal < Blind_Fatal | 170.470 | 121.374 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 12.137 |
+| Safety-Critical | TRUE-no-cap_Collapse < TTB_Collapse | 0.045 | 18.750 | 0.0000 | 0.0000 | 15.000 | 0.0000 | 0.0000 | 1.875 |
+| Safety-Critical | TRUE-no-cap_A9 < Blind_A9 | 6.520 | 9.772 | 0.0000 | 0.0000 | 5.500 | 0.0000 | 0.0000 | 0.977 |
+| Utility-Trust-Misalignment | TRUE_U > TTB_U | 1564.000 | 3.110 | 0.0019 | 0.1796 | 1788.000 | 0.0113 | 1.0000 | 0.311 |
+| Utility-Trust-Misalignment | TRUE_Fatal < TTB_Fatal | 7.750 | 3.089 | 0.0020 | 0.1927 | 1634.000 | 0.0112 | 1.0000 | 0.309 |
+| Utility-Trust-Misalignment | TRUE_U > TTB-cap_U | -965.300 | -4.413 | 0.0000 | 0.0010 | 1389.500 | 0.0001 | 0.0091 | -0.441 |
+| Utility-Trust-Misalignment | TRUE_Fatal < TTB-cap_Fatal | -1.670 | -1.679 | 0.0932 | 1.0000 | 2058.000 | 0.1455 | 1.0000 | -0.168 |
+| Utility-Trust-Misalignment | TRUE_U > MOO_U | 1432.800 | 4.159 | 0.0000 | 0.0031 | 1376.000 | 0.0001 | 0.0075 | 0.416 |
+| Utility-Trust-Misalignment | TRUE_Fatal < MOO_Fatal | 8.780 | 5.152 | 0.0000 | 0.0000 | 1102.500 | 0.0000 | 0.0003 | 0.515 |
+| Utility-Trust-Misalignment | TRUE_U > MOO-cap_U | 171.400 | 0.697 | 0.4861 | 1.0000 | 2393.000 | 0.6499 | 1.0000 | 0.070 |
+| Utility-Trust-Misalignment | TRUE_Fatal < MOO-cap_Fatal | 2.490 | 2.092 | 0.0365 | 1.0000 | 1855.500 | 0.0608 | 1.0000 | 0.209 |
+| Utility-Trust-Misalignment | TRUE_U > Blind_U | 24109.000 | 126.463 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 12.646 |
+| Utility-Trust-Misalignment | TRUE_Fatal < Blind_Fatal | 149.720 | 122.859 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 12.286 |
+| Utility-Trust-Misalignment | TRUE_Collapse < TTB_Collapse | 0.062 | 24.765 | 0.0000 | 0.0000 | 1.000 | 0.0000 | 0.0000 | 2.476 |
+| Utility-Trust-Misalignment | TRUE_A9 < Blind_A9 | 6.430 | 7.894 | 0.0000 | 0.0000 | 17.000 | 0.0000 | 0.0000 | 0.789 |
+| Utility-Trust-Misalignment | TRUE-no-cap_U > TTB_U | -345.800 | -0.667 | 0.5045 | 1.0000 | 1682.500 | 0.0038 | 0.3619 | -0.067 |
+| Utility-Trust-Misalignment | TRUE-no-cap_Fatal < TTB_Fatal | 5.120 | 1.996 | 0.0460 | 1.0000 | 2274.500 | 0.3891 | 1.0000 | 0.200 |
+| Utility-Trust-Misalignment | TRUE-no-cap_U > TTB-cap_U | -2875.100 | -12.312 | 0.0000 | 0.0000 | 222.000 | 0.0000 | 0.0000 | -1.231 |
+| Utility-Trust-Misalignment | TRUE-no-cap_Fatal < TTB-cap_Fatal | -4.300 | -3.824 | 0.0001 | 0.0126 | 1334.500 | 0.0002 | 0.0170 | -0.382 |
+| Utility-Trust-Misalignment | TRUE-no-cap_U > MOO_U | -477.000 | -1.456 | 0.1455 | 1.0000 | 1940.500 | 0.0445 | 1.0000 | -0.146 |
+| Utility-Trust-Misalignment | TRUE-no-cap_Fatal < MOO_Fatal | 6.150 | 3.926 | 0.0001 | 0.0083 | 1332.500 | 0.0004 | 0.0419 | 0.393 |
+| Utility-Trust-Misalignment | TRUE-no-cap_U > MOO-cap_U | -1738.400 | -5.961 | 0.0000 | 0.0000 | 870.000 | 0.0000 | 0.0000 | -0.596 |
+| Utility-Trust-Misalignment | TRUE-no-cap_Fatal < MOO-cap_Fatal | -0.140 | -0.099 | 0.9212 | 1.0000 | 2241.500 | 0.8864 | 1.0000 | -0.010 |
+| Utility-Trust-Misalignment | TRUE-no-cap_U > Blind_U | 22199.200 | 99.481 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 9.948 |
+| Utility-Trust-Misalignment | TRUE-no-cap_Fatal < Blind_Fatal | 147.090 | 103.147 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 10.315 |
+| Utility-Trust-Misalignment | TRUE-no-cap_Collapse < TTB_Collapse | 0.078 | 25.726 | 0.0000 | 0.0000 | 1.000 | 0.0000 | 0.0000 | 2.573 |
+| Utility-Trust-Misalignment | TRUE-no-cap_A9 < Blind_A9 | 6.520 | 8.008 | 0.0000 | 0.0000 | 0.000 | 0.0000 | 0.0000 | 0.801 |
 
 ## Interpretation & Limitations
 
