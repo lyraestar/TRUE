@@ -1,0 +1,33 @@
+scenario,hypothesis,metric,mean_diff,t,p_t,w_stat,p_w,cohens_d,p_t_bonf,p_w_bonf
+baseline,TRUE_U > Blind_U,cumulative utility,1140.0,4.071428571428571,4.672569085784062e-05,0.0,1.0,2.8789347519738007,0.0014952221074508998,1.0
+baseline,TRUE_Fatal < Blind_Fatal,fatal errors,6.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0
+baseline,TRUE_U > TTB_U,cumulative utility,580.0,1.8125,0.06990897393646955,0.0,1.0,1.2816310409006173,1.0,1.0
+baseline,TRUE_Fatal < TTB_Fatal,fatal errors,2.5,1.666666666666667,0.09558070454562939,0.0,1.0,1.1785113019775793,1.0,1.0
+baseline,TRUE_U > MOO_U,cumulative utility,320.0,1.1428571428571428,0.2530979089471157,0.0,1.0,0.8081220356417685,1.0,1.0
+baseline,TRUE_Fatal < MOO_Fatal,fatal errors,1.5,1.0000000000000002,0.3173105078629139,0.0,1.0,0.7071067811865476,1.0,1.0
+baseline,TRUE_Collapse < TTB_Collapse,collapse index,0.05673533363188536,0.901002773629187,0.3675868449740458,0.0,1.0,0.6371051711010859,1.0,1.0
+baseline,TRUE_A9 < Blind_A9,A9 first selected delay,0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0
+observation_manipulated,TRUE_U > Blind_U,cumulative utility,1340.0,9.571428571428571,0.0,0.0,1.0,6.7680220484998115,0.0,1.0
+observation_manipulated,TRUE_Fatal < Blind_Fatal,fatal errors,9.0,9.0,0.0,0.0,1.0,6.363961030678928,0.0,1.0
+observation_manipulated,TRUE_U > TTB_U,cumulative utility,1760.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0
+observation_manipulated,TRUE_Fatal < TTB_Fatal,fatal errors,12.5,25.0,0.0,0.0,1.0,17.677669529663685,0.0,1.0
+observation_manipulated,TRUE_U > MOO_U,cumulative utility,920.0,3.2857142857142856,0.001017241350328657,0.0,1.0,2.3233508524700848,0.032551723210517025,1.0
+observation_manipulated,TRUE_Fatal < MOO_Fatal,fatal errors,5.0,2.5,0.012419330651552318,0.0,1.0,1.7677669529663687,0.3974185808496742,1.0
+observation_manipulated,TRUE_Collapse < TTB_Collapse,collapse index,0.15825331886115052,117.00000000000456,0.0,0.0,1.0,82.73149339882929,0.0,1.0
+observation_manipulated,TRUE_A9 < Blind_A9,A9 first selected delay,0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0
+safety_critical,TRUE_U > Blind_U,cumulative utility,1780.0,6.357142857142857,2.0554091761937343e-10,0.0,1.0,4.495178823257338,6.57730936381995e-09,1.0
+safety_critical,TRUE_Fatal < Blind_Fatal,fatal errors,7.0,3.5,0.0004652581580710802,0.0,1.0,2.4748737341529163,0.014888261058274566,1.0
+safety_critical,TRUE_U > TTB_U,cumulative utility,1530.0,1.0851063829787235,0.27787454061641004,0.0,1.0,0.7672860817130622,1.0,1.0
+safety_critical,TRUE_Fatal < TTB_Fatal,fatal errors,7.0,1.4,0.16151331846754213,0.0,1.0,0.9899494936611665,1.0,1.0
+safety_critical,TRUE_U > MOO_U,cumulative utility,840.0,3.0,0.002699796063260207,0.0,1.0,2.1213203435596424,0.08639347402432662,1.0
+safety_critical,TRUE_Fatal < MOO_Fatal,fatal errors,3.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0
+safety_critical,TRUE_Collapse < TTB_Collapse,collapse index,0.01704081632653061,0.29401408450704214,0.7687471409135378,0.0,1.0,0.20789935291928413,1.0,1.0
+safety_critical,TRUE_A9 < Blind_A9,A9 first selected delay,0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0
+utility_trust_misalignment,TRUE_U > Blind_U,cumulative utility,1535.0,18.058823529411764,0.0,0.0,1.0,12.76951657789824,0.0,1.0
+utility_trust_misalignment,TRUE_Fatal < Blind_Fatal,fatal errors,10.0,10.0,0.0,0.0,1.0,7.071067811865475,0.0,1.0
+utility_trust_misalignment,TRUE_U > TTB_U,cumulative utility,1275.0,4.473684210526316,7.688326310484328e-06,0.0,1.0,3.163372442150344,0.0002460264419354985,1.0
+utility_trust_misalignment,TRUE_Fatal < TTB_Fatal,fatal errors,8.5,2.428571428571429,0.015158438877439506,0.0,1.0,1.7172593257387583,0.4850700440780642,1.0
+utility_trust_misalignment,TRUE_U > MOO_U,cumulative utility,550.0,0.7638888888888888,0.4449334593713945,0.0,1.0,0.5401510134063905,1.0,1.0
+utility_trust_misalignment,TRUE_Fatal < MOO_Fatal,fatal errors,4.5,1.0,0.31731050786291415,0.0,1.0,0.7071067811865476,1.0,1.0
+utility_trust_misalignment,TRUE_Collapse < TTB_Collapse,collapse index,0.05345883180858549,37.699751861039964,0.0,0.0,1.0,26.657750189991525,0.0,1.0
+utility_trust_misalignment,TRUE_A9 < Blind_A9,A9 first selected delay,0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0

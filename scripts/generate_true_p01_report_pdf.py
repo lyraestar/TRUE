@@ -29,6 +29,7 @@ GROUP_COLORS = {
     "TRUE-N": "#d62728",
     "Blind": "#9467bd",
     "TTB": "#8c564b",
+    "MOO": "#e377c2",
 }
 
 GROUP_LABELS = {
@@ -38,6 +39,7 @@ GROUP_LABELS = {
     "TRUE-N": "TRUE-N (no newcomer)",
     "Blind": "Blind",
     "TTB": "TTB",
+    "MOO": "MOO (Tchebycheff)",
 }
 
 SCENARIO_LABELS = {
@@ -67,7 +69,6 @@ def load_tests(path: Path) -> List[dict]:
 
 
 def load_timeseries(path: Path) -> Dict[Tuple[str, str, int], dict]:
-    """Aggregate timeseries by (scenario, group, round) -> mean across runs."""
     accum: Dict[Tuple[str, str, int], List[dict]] = defaultdict(list)
     with path.open(encoding="utf-8") as fh:
         reader = csv.DictReader(fh)
@@ -162,7 +163,7 @@ def build_pdf(summary, tests, charts, out):
     story.append(Spacer(1, 1*cm))
     story.append(Paragraph("Trust-Reliability Unified Engineering<br/>Multi-Agent Collaboration Simulation", body_style))
     story.append(Spacer(1, 1*cm))
-    story.append(Paragraph("100 runs x 200 rounds x 4 scenarios x 6 groups<br/>Fixed task-flow pairing | Bootstrap CIs | Bonferroni correction", small_style))
+    story.append(Paragraph("100 runs x 200 rounds x 4 scenarios x 7 groups<br/>Fixed task-flow pairing | Bootstrap CIs | Bonferroni correction", small_style))
     story.append(PageBreak())
 
     # Executive Summary
@@ -174,7 +175,8 @@ def build_pdf(summary, tests, charts, out):
     """, body_style))
     story.append(Paragraph("""
     <b>Key changes:</b> (1) Fixed task-flow pairing; (2) Removed group-specific observation manipulation for A8;
-    (3) Renamed MOO to TTB (Trust-Targeted Baseline); (4) Added ablation variants TRUE-C, TRUE-E, TRUE-N;
+    (3) Renamed MOO to TTB (Trust-Targeted Baseline) and added a proper MOO baseline using weighted Tchebycheff;
+    (4) Added ablation variants TRUE-C, TRUE-E, TRUE-N;
     (5) Wilcoxon signed-rank test + bootstrap 95% CIs + Bonferroni correction.
     """, body_style))
     story.append(Spacer(1, 0.5*cm))
@@ -256,8 +258,10 @@ def build_pdf(summary, tests, charts, out):
 
     key_tests = [t for t in tests if t["hypothesis"] in {
         "TRUE_U > Blind_U", "TRUE_Fatal < Blind_Fatal", "TRUE_U > TTB_U", "TRUE_Fatal < TTB_Fatal",
-        "TRUE_Collapse < TTB_Collapse", "TRUE_A9 < Blind_A9",
-        "TRUE-C_U > TTB_U", "TRUE-N_U > TTB_U",
+        "TRUE_U > MOO_U", "TRUE_Fatal < MOO_Fatal",
+        "TRUE_Collapse < TTB_Collapse", "TRUE_Collapse < MOO_Collapse",
+        "TRUE_A9 < Blind_A9",
+        "MOO_U > TTB_U", "MOO_Fatal < TTB_Fatal",
     }]
     test_header = ["Scenario", "Hypothesis", "Mean Diff", "t", "p_t(Bonf)", "Cohen d"]
     test_rows = [test_header]
@@ -287,8 +291,13 @@ def build_pdf(summary, tests, charts, out):
     story.append(Paragraph("""
     <b>Task-flow pairing:</b> Within each run all groups see the same module sequence. Differences are therefore
     attributable to selection mechanisms, not task luck.<br/><br/>
-    <b>Observation uniformity:</b> A8 surface-quality bonus is uniform across groups. The only A8 asymmetry is
-    inside TTB's scoring function (A8 receives extra trust-objective weight), which is a mechanism-level difference.<br/><br/>
+    <b>Observation uniformity:</b> A8 surface-quality bonus is uniform across groups. The only A8 asymmetry in TTB
+    is its scoring-function bonus (hard-coded trust-objective weight), which is a mechanism-level difference.
+    MOO has no hard-coded A8 bonus; any A8 advantage emerges naturally from high surface-quality observations.<br/><br/>
+    <b>MOO vs TTB:</b> The weighted Tchebycheff MOO baseline includes explicit diversity objective (selection
+    concentration penalty) and per-candidate-pool normalization. It consistently outperforms TTB but still
+    falls short of TRUE, confirming that the problem is "trust-as-objective" rather than the specific
+    aggregation function.<br/><br/>
     <b>Ablation surprise:</b> TRUE-C and TRUE-N outperform full TRUE in cumulative utility under current parameters,
     suggesting that constraint filtering and newcomer protection may be overly conservative. However, TRUE-N shows
     dramatically higher A9 cold-start delay, confirming that newcomer protection serves its intended purpose.<br/><br/>

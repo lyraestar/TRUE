@@ -765,6 +765,67 @@ def select_ttb(scenario: Scenario, state: TrustState, round_no: int, module: Mod
     return best_entity
 
 
+def select_moo(scenario: Scenario, state: TrustState, round_no: int, module: Module) -> Entity:
+    """Weighted Tchebycheff MOO baseline with explicit diversity objective.
+
+    Defines four normalized objectives:
+      f1 = -predicted_utility   (maximize utility)
+      f2 = -trust_mean          (maximize trust)
+      f3 =  trust_variance      (minimize uncertainty)
+      f4 =  selection_count     (minimize concentration)
+
+    Uses per-candidate-pool min-max normalization and weighted Tchebycheff
+    distance to a utopian reference point.
+    """
+    candidates = allowed_entities(round_no, module)
+    k = module.capability_index
+
+    objectives: List[Tuple[Entity, float, float, float, float]] = []
+    total_selections = max(1, sum(state.selected[e.eid] for e in candidates))
+
+    for entity in candidates:
+        tm = trust_mean(state, entity.eid, k)
+        tv = trust_var(state, entity.eid, k)
+        predicted_utility = tm * module_difficulty(scenario, module, round_no)
+        f1 = -predicted_utility
+        f2 = -tm
+        f3 = tv
+        f4 = state.selected[entity.eid] / total_selections
+        objectives.append((entity, f1, f2, f3, f4))
+
+    # Compute per-objective ranges for normalization
+    vals = [list(t[i] for t in objectives) for i in range(1, 5)]
+    ranges = []
+    for v in vals:
+        lo, hi = min(v), max(v)
+        if hi - lo < 1e-12:
+            ranges.append((lo, 0.0))
+        else:
+            ranges.append((lo, hi - lo))
+
+    def norm(i: int, x: float) -> float:
+        lo, span = ranges[i]
+        return (x - lo) / span if span > 0 else 0.0
+
+    # Weight vector: utility, trust, variance, diversity
+    weights = [0.22, 0.50, 0.04, 0.24]
+    # Utopian reference point in normalized space
+    z_star = [0.0, 0.0, 0.0, 0.0]
+
+    best_entity: Optional[Entity] = None
+    best_dist = float("inf")
+    for entity, f1, f2, f3, f4 in objectives:
+        nf = [norm(0, f1), norm(1, f2), norm(2, f3), norm(3, f4)]
+        dist = max(weights[i] * abs(nf[i] - z_star[i]) for i in range(4))
+        dist -= 0.015 * preference_bonus(module, entity)
+        if dist < best_dist:
+            best_dist = dist
+            best_entity = entity
+
+    assert best_entity is not None
+    return best_entity
+
+
 # ---------------------------------------------------------------------------
 # Module execution
 # ---------------------------------------------------------------------------
@@ -789,8 +850,10 @@ def execute_module(
         entity = select_true_minus_newcomer(rng, scenario, state, round_no, module)
     elif group == "Blind":
         entity = select_blind(rng, round_no, module)
-    else:
+    elif group == "TTB":
         entity = select_ttb(scenario, state, round_no, module)
+    else:
+        entity = select_moo(scenario, state, round_no, module)
 
     p_true = true_success_probability(rng, scenario, state, round_no, module, entity, prior_results)
     catastrophe = catastrophe_probability(scenario, entity, module)
@@ -1243,7 +1306,7 @@ def main() -> None:
     parser.add_argument("--seed", type=int, default=20260510)
     parser.add_argument("--scenarios", type=str, default=",".join(s.name for s in SCENARIOS))
     parser.add_argument("--outdir", type=Path, default=Path("."))
-    parser.add_argument("--groups", type=str, default="TRUE,TRUE-C,TRUE-E,TRUE-N,Blind,TTB")
+    parser.add_argument("--groups", type=str, default="TRUE,TRUE-C,TRUE-E,TRUE-N,Blind,TTB,MOO")
     args = parser.parse_args()
 
     selected_scenarios = parse_scenarios(args.scenarios)
