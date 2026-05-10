@@ -1,0 +1,4 @@
+scenario,hypothesis,metric,mean_diff,t,p_t,w_stat,p_w,cohens_d,p_t_bonf,p_w_bonf
+baseline,TRUE_U > Blind_U,cumulative utility,25086.0,129.0163951737274,0.0,0,0.0,12.901639517372741,0.0,0.0
+baseline,TRUE_Fatal < Blind_Fatal,fatal errors,149.24,136.24695021061964,0.0,0,0.0,13.624695021061966,0.0,0.0
+baseline,TRUE_A9 < Blind_A9,A9 first selected delay,5.93,8.325529914276476,0.0,80.5,8.43769498715119e-15,0.8325529914276477,0.0,2.531308496145357e-14

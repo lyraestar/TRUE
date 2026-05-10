@@ -1,0 +1,326 @@
+[
+  {
+    "cap_noise": 0.0,
+    "scenario": "baseline",
+    "group": "MOO-cap",
+    "utility": 943.4,
+    "fatal": 61.64,
+    "gini": 0.7218040754587074,
+    "collapse": 0.43348244527522467
+  },
+  {
+    "cap_noise": 0.0,
+    "scenario": "baseline",
+    "group": "TRUE",
+    "utility": 1186.4,
+    "fatal": 60.21,
+    "gini": 0.65451310364432,
+    "collapse": 0.40410786218659195
+  },
+  {
+    "cap_noise": 0.0,
+    "scenario": "baseline",
+    "group": "TTB-cap",
+    "utility": 1745.2,
+    "fatal": 59.04,
+    "gini": 0.7382039984738246,
+    "collapse": 0.44307239908429474
+  },
+  {
+    "cap_noise": 0.0,
+    "scenario": "observation_manipulated",
+    "group": "MOO-cap",
+    "utility": 945.2,
+    "fatal": 57.57,
+    "gini": 0.6806269619341512,
+    "collapse": 0.40837617716049074
+  },
+  {
+    "cap_noise": 0.0,
+    "scenario": "observation_manipulated",
+    "group": "TRUE",
+    "utility": 2472.4,
+    "fatal": 50.5,
+    "gini": 0.6485545516221843,
+    "collapse": 0.3905827309733103
+  },
+  {
+    "cap_noise": 0.0,
+    "scenario": "observation_manipulated",
+    "group": "TTB-cap",
+    "utility": 3069.2,
+    "fatal": 49.56,
+    "gini": 0.7344261668928155,
+    "collapse": 0.4406557001356892
+  },
+  {
+    "cap_noise": 0.0,
+    "scenario": "safety_critical",
+    "group": "MOO-cap",
+    "utility": -3140.4,
+    "fatal": 41.92,
+    "gini": 0.7332208601504173,
+    "collapse": 0.44553251609025024
+  },
+  {
+    "cap_noise": 0.0,
+    "scenario": "safety_critical",
+    "group": "TRUE",
+    "utility": -2829.2,
+    "fatal": 40.25,
+    "gini": 0.6657359875379864,
+    "collapse": 0.4202415925227919
+  },
+  {
+    "cap_noise": 0.0,
+    "scenario": "safety_critical",
+    "group": "TTB-cap",
+    "utility": -2041.0,
+    "fatal": 38.88,
+    "gini": 0.7438800884011969,
+    "collapse": 0.4517780530407184
+  },
+  {
+    "cap_noise": 0.0,
+    "scenario": "utility_trust_misalignment",
+    "group": "MOO-cap",
+    "utility": 2217.8,
+    "fatal": 58.07,
+    "gini": 0.7193301394918749,
+    "collapse": 0.4316480836951251
+  },
+  {
+    "cap_noise": 0.0,
+    "scenario": "utility_trust_misalignment",
+    "group": "TRUE",
+    "utility": 2410.6,
+    "fatal": 55.83,
+    "gini": 0.6434211244832059,
+    "collapse": 0.39570267468992365
+  },
+  {
+    "cap_noise": 0.0,
+    "scenario": "utility_trust_misalignment",
+    "group": "TTB-cap",
+    "utility": 2944.5,
+    "fatal": 55.75,
+    "gini": 0.7373216625239588,
+    "collapse": 0.44239299751437544
+  },
+  {
+    "cap_noise": 0.1,
+    "scenario": "baseline",
+    "group": "MOO-cap",
+    "utility": 870.6,
+    "fatal": 62.25,
+    "gini": 0.7210195366857934,
+    "collapse": 0.43286172201147616
+  },
+  {
+    "cap_noise": 0.1,
+    "scenario": "baseline",
+    "group": "TRUE",
+    "utility": 700.0,
+    "fatal": 61.0,
+    "gini": 0.6148231463820898,
+    "collapse": 0.3808938878292537
+  },
+  {
+    "cap_noise": 0.1,
+    "scenario": "baseline",
+    "group": "TTB-cap",
+    "utility": 1685.0,
+    "fatal": 58.56,
+    "gini": 0.7403495049613271,
+    "collapse": 0.4445097029767961
+  },
+  {
+    "cap_noise": 0.1,
+    "scenario": "observation_manipulated",
+    "group": "MOO-cap",
+    "utility": 1812.8,
+    "fatal": 54.49,
+    "gini": 0.6893382719011427,
+    "collapse": 0.41360296314068584
+  },
+  {
+    "cap_noise": 0.1,
+    "scenario": "observation_manipulated",
+    "group": "TRUE",
+    "utility": 1651.2,
+    "fatal": 52.8,
+    "gini": 0.5567362403757268,
+    "collapse": 0.33574174422543607
+  },
+  {
+    "cap_noise": 0.1,
+    "scenario": "observation_manipulated",
+    "group": "TTB-cap",
+    "utility": 2715.2,
+    "fatal": 50.22,
+    "gini": 0.7340690137506004,
+    "collapse": 0.4404414082503603
+  },
+  {
+    "cap_noise": 0.1,
+    "scenario": "safety_critical",
+    "group": "MOO-cap",
+    "utility": -3067.2,
+    "fatal": 40.92,
+    "gini": 0.7370191870301548,
+    "collapse": 0.44841151221809306
+  },
+  {
+    "cap_noise": 0.1,
+    "scenario": "safety_critical",
+    "group": "TRUE",
+    "utility": -3195.2,
+    "fatal": 40.58,
+    "gini": 0.6435181137932304,
+    "collapse": 0.4068108682759379
+  },
+  {
+    "cap_noise": 0.1,
+    "scenario": "safety_critical",
+    "group": "TTB-cap",
+    "utility": -1913.4,
+    "fatal": 38.89,
+    "gini": 0.7457395703150412,
+    "collapse": 0.4530437421890246
+  },
+  {
+    "cap_noise": 0.1,
+    "scenario": "utility_trust_misalignment",
+    "group": "MOO-cap",
+    "utility": 2022.9,
+    "fatal": 59.16,
+    "gini": 0.7151928580974309,
+    "collapse": 0.42916571485845856
+  },
+  {
+    "cap_noise": 0.1,
+    "scenario": "utility_trust_misalignment",
+    "group": "TRUE",
+    "utility": 2023.6,
+    "fatal": 57.12,
+    "gini": 0.5911515576308968,
+    "collapse": 0.3640909345785382
+  },
+  {
+    "cap_noise": 0.1,
+    "scenario": "utility_trust_misalignment",
+    "group": "TTB-cap",
+    "utility": 3129.3,
+    "fatal": 54.41,
+    "gini": 0.7363978239034443,
+    "collapse": 0.4419386943420666
+  },
+  {
+    "cap_noise": 0.2,
+    "scenario": "baseline",
+    "group": "MOO-cap",
+    "utility": 258.0,
+    "fatal": 65.33,
+    "gini": 0.7138972056744225,
+    "collapse": 0.42873832340465384
+  },
+  {
+    "cap_noise": 0.2,
+    "scenario": "baseline",
+    "group": "TRUE",
+    "utility": 86.2,
+    "fatal": 64.53,
+    "gini": 0.5887482441802123,
+    "collapse": 0.3654489465081275
+  },
+  {
+    "cap_noise": 0.2,
+    "scenario": "baseline",
+    "group": "TTB-cap",
+    "utility": 1387.0,
+    "fatal": 60.54,
+    "gini": 0.7405499226819937,
+    "collapse": 0.4447299536091963
+  },
+  {
+    "cap_noise": 0.2,
+    "scenario": "observation_manipulated",
+    "group": "MOO-cap",
+    "utility": 883.6,
+    "fatal": 57.84,
+    "gini": 0.6881974371896163,
+    "collapse": 0.4129184623137698
+  },
+  {
+    "cap_noise": 0.2,
+    "scenario": "observation_manipulated",
+    "group": "TRUE",
+    "utility": 801.2,
+    "fatal": 56.59,
+    "gini": 0.5207677745767931,
+    "collapse": 0.31416066474607596
+  },
+  {
+    "cap_noise": 0.2,
+    "scenario": "observation_manipulated",
+    "group": "TTB-cap",
+    "utility": 2614.8,
+    "fatal": 50.88,
+    "gini": 0.7349964040208353,
+    "collapse": 0.4409978424125013
+  },
+  {
+    "cap_noise": 0.2,
+    "scenario": "safety_critical",
+    "group": "MOO-cap",
+    "utility": -3291.0,
+    "fatal": 42.57,
+    "gini": 0.730016202819642,
+    "collapse": 0.44345972169178505
+  },
+  {
+    "cap_noise": 0.2,
+    "scenario": "safety_critical",
+    "group": "TRUE",
+    "utility": -3721.8,
+    "fatal": 41.78,
+    "gini": 0.6266608168162858,
+    "collapse": 0.39879649008977147
+  },
+  {
+    "cap_noise": 0.2,
+    "scenario": "safety_critical",
+    "group": "TTB-cap",
+    "utility": -2394.4,
+    "fatal": 39.52,
+    "gini": 0.7441780764074543,
+    "collapse": 0.4523568458444726
+  },
+  {
+    "cap_noise": 0.2,
+    "scenario": "utility_trust_misalignment",
+    "group": "MOO-cap",
+    "utility": 2622.1,
+    "fatal": 55.85,
+    "gini": 0.7222827825016208,
+    "collapse": 0.4334196695009729
+  },
+  {
+    "cap_noise": 0.2,
+    "scenario": "utility_trust_misalignment",
+    "group": "TRUE",
+    "utility": 1859.5,
+    "fatal": 57.18,
+    "gini": 0.571019961309724,
+    "collapse": 0.3526119767858343
+  },
+  {
+    "cap_noise": 0.2,
+    "scenario": "utility_trust_misalignment",
+    "group": "TTB-cap",
+    "utility": 3179.7,
+    "fatal": 54.54,
+    "gini": 0.7332304147352601,
+    "collapse": 0.43993824884115595
+  }
+]

@@ -1,0 +1,98 @@
+Running cap-noise sweep: TRUE, TTB-cap, MOO-cap, Blind
+
+=== cap_noise = 0.00 ===
+baseline TRUE U= 896.8 Q= 0.767 Fatal= 61.0
+baseline TTB-cap U= 1636.6 Q= 0.801 Fatal= 59.2
+baseline MOO-cap U= 82.0 Q= 0.781 Fatal= 66.5
+baseline Blind U= -23907.4 Q= 0.341 Fatal= 210.5
+observation_manipulated TRUE U= 2102.4 Q= 0.769 Fatal= 51.7
+observation_manipulated TTB-cap U= 2999.6 Q= 0.810 Fatal= 49.6
+observation_manipulated MOO-cap U= 1115.2 Q= 0.789 Fatal= 57.4
+observation_manipulated Blind U= -25219.2 Q= 0.336 Fatal= 198.2
+utility_trust_misalignment TRUE U= 2345.4 Q= 0.749 Fatal= 56.1
+utility_trust_misalignment TTB-cap U= 3131.4 Q= 0.779 Fatal= 55.2
+utility_trust_misalignment MOO-cap U= 2680.1 Q= 0.769 Fatal= 56.2
+utility_trust_misalignment Blind U= -21840.8 Q= 0.337 Fatal= 206.6
+safety_critical TRUE U= -3313.0 Q= 0.794 Fatal= 41.5
+safety_critical TTB-cap U= -2089.0 Q= 0.828 Fatal= 39.0
+safety_critical MOO-cap U= -3013.2 Q= 0.817 Fatal= 41.6
+safety_critical Blind U= -53395.8 Q= 0.343 Fatal= 213.3
+Wrote outputs to /mnt/cpfs/renpeiran/ai4e/TRUE/data/p02_results/noise_0.00
+
+=== cap_noise = 0.05 ===
+safety_critical TRUE U= -3762.4 Q= 0.792 Fatal= 42.3
+safety_critical TTB-cap U= -1793.8 Q= 0.831 Fatal= 38.8
+safety_critical MOO-cap U= -3079.0 Q= 0.815 Fatal= 41.8
+safety_critical Blind U= -53419.0 Q= 0.343 Fatal= 214.3
+utility_trust_misalignment TRUE U= 2068.2 Q= 0.745 Fatal= 57.2
+utility_trust_misalignment TTB-cap U= 2976.1 Q= 0.781 Fatal= 55.6
+utility_trust_misalignment MOO-cap U= 2153.1 Q= 0.765 Fatal= 58.6
+utility_trust_misalignment Blind U= -21928.1 Q= 0.337 Fatal= 206.3
+observation_manipulated TRUE U= 1750.4 Q= 0.767 Fatal= 52.8
+observation_manipulated TTB-cap U= 2841.6 Q= 0.810 Fatal= 49.8
+observation_manipulated MOO-cap U= 1328.4 Q= 0.790 Fatal= 56.2
+observation_manipulated Blind U= -25491.2 Q= 0.334 Fatal= 198.3
+baseline TRUE U= 665.2 Q= 0.766 Fatal= 62.0
+baseline TTB-cap U= 1512.4 Q= 0.800 Fatal= 59.6
+baseline MOO-cap U= 758.2 Q= 0.783 Fatal= 62.3
+baseline Blind U= -23754.2 Q= 0.343 Fatal= 209.2
+Wrote outputs to /mnt/cpfs/renpeiran/ai4e/TRUE/data/p02_results/noise_0.05
+
+=== cap_noise = 0.10 ===
+baseline TRUE U= 735.4 Q= 0.764 Fatal= 61.4
+baseline TTB-cap U= 1399.8 Q= 0.797 Fatal= 60.7
+baseline MOO-cap U= 217.0 Q= 0.782 Fatal= 65.7
+baseline Blind U= -23907.4 Q= 0.341 Fatal= 210.5
+utility_trust_misalignment TRUE U= 1983.0 Q= 0.744 Fatal= 57.2
+utility_trust_misalignment TTB-cap U= 3103.7 Q= 0.781 Fatal= 54.6
+utility_trust_misalignment MOO-cap U= 2395.1 Q= 0.764 Fatal= 57.3
+utility_trust_misalignment Blind U= -21928.1 Q= 0.337 Fatal= 206.3
+safety_critical TRUE U= -3665.4 Q= 0.792 Fatal= 41.4
+safety_critical TTB-cap U= -1982.8 Q= 0.828 Fatal= 39.1
+safety_critical MOO-cap U= -2841.2 Q= 0.820 Fatal= 40.4
+safety_critical Blind U= -53714.0 Q= 0.343 Fatal= 214.4
+observation_manipulated TRUE U= 1392.4 Q= 0.761 Fatal= 54.1
+observation_manipulated TTB-cap U= 2751.2 Q= 0.805 Fatal= 50.2
+observation_manipulated MOO-cap U= 1852.4 Q= 0.792 Fatal= 53.9
+observation_manipulated Blind U= -25323.2 Q= 0.336 Fatal= 199.2
+Wrote outputs to /mnt/cpfs/renpeiran/ai4e/TRUE/data/p02_results/noise_0.10
+
+=== cap_noise = 0.15 ===
+baseline TRUE U= 679.4 Q= 0.759 Fatal= 61.9
+baseline TTB-cap U= 1413.4 Q= 0.796 Fatal= 60.5
+baseline MOO-cap U= 483.8 Q= 0.783 Fatal= 64.6
+baseline Blind U= -23907.4 Q= 0.341 Fatal= 210.5
+observation_manipulated TRUE U= 1178.0 Q= 0.762 Fatal= 55.1
+observation_manipulated TTB-cap U= 2655.2 Q= 0.806 Fatal= 50.9
+observation_manipulated MOO-cap U= 1207.2 Q= 0.784 Fatal= 56.7
+observation_manipulated Blind U= -25219.2 Q= 0.336 Fatal= 198.2
+utility_trust_misalignment TRUE U= 1946.0 Q= 0.741 Fatal= 57.3
+utility_trust_misalignment TTB-cap U= 3239.5 Q= 0.782 Fatal= 54.2
+utility_trust_misalignment MOO-cap U= 2491.0 Q= 0.767 Fatal= 56.4
+utility_trust_misalignment Blind U= -21840.8 Q= 0.337 Fatal= 206.6
+safety_critical TRUE U= -4216.6 Q= 0.786 Fatal= 42.8
+safety_critical TTB-cap U= -2344.6 Q= 0.825 Fatal= 39.5
+safety_critical MOO-cap U= -2844.2 Q= 0.817 Fatal= 41.5
+safety_critical Blind U= -53395.8 Q= 0.343 Fatal= 213.3
+Wrote outputs to /mnt/cpfs/renpeiran/ai4e/TRUE/data/p02_results/noise_0.15
+
+=== cap_noise = 0.20 ===
+safety_critical TRUE U= -4205.4 Q= 0.785 Fatal= 43.1
+safety_critical TTB-cap U= -1710.8 Q= 0.827 Fatal= 38.7
+safety_critical MOO-cap U= -3618.2 Q= 0.810 Fatal= 42.8
+safety_critical Blind U= -53419.0 Q= 0.343 Fatal= 214.3
+observation_manipulated TRUE U= 931.6 Q= 0.754 Fatal= 56.4
+observation_manipulated TTB-cap U= 2679.2 Q= 0.806 Fatal= 50.8
+observation_manipulated MOO-cap U= 1016.8 Q= 0.784 Fatal= 57.2
+observation_manipulated Blind U= -25219.2 Q= 0.336 Fatal= 198.2
+baseline TRUE U= 347.6 Q= 0.752 Fatal= 63.9
+baseline TTB-cap U= 1535.2 Q= 0.800 Fatal= 59.6
+baseline MOO-cap U= 1290.4 Q= 0.789 Fatal= 60.1
+baseline Blind U= -23786.6 Q= 0.342 Fatal= 209.5
+utility_trust_misalignment TRUE U= 1635.8 Q= 0.734 Fatal= 58.0
+utility_trust_misalignment TTB-cap U= 2889.4 Q= 0.774 Fatal= 56.1
+utility_trust_misalignment MOO-cap U= 2576.8 Q= 0.767 Fatal= 56.7
+utility_trust_misalignment Blind U= -21550.6 Q= 0.338 Fatal= 203.8
+Wrote outputs to /mnt/cpfs/renpeiran/ai4e/TRUE/data/p02_results/noise_0.20
+
+All noise experiments done. Results in data/p02_results/

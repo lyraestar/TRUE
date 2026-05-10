@@ -1,0 +1,3 @@
+scenario,group,cumulative_utility_mean,cumulative_utility_sd,cumulative_utility_ci_lo,cumulative_utility_ci_hi,mean_quality_true,mean_quality_surface,fatal_errors_mean,fatal_errors_sd,success_rate,final_trust_gini,final_collapse_index,mean_trust_var,a9_first_delay,a10_first_delay,a9_first20_rate,a9_var_convergence,a8_trust_quality_corr
+baseline,Blind,-23924.6,1621.6286986741559,-24255.4,-23621.6,0.3427500000000002,0.4018708333333334,209.56,11.199134165666829,0.30735,0.5292168830541897,0.31753012983251383,0.08333333333333372,6.33,7.9,0.14150000000000001,999.0,0.0
+baseline,TTB-cap,1474.0,1787.6128204842335,1116.0,1844.2,0.7969941666666668,0.7629425000000001,59.99,7.5818696556157885,0.737,0.7400913942641576,0.44430483655849456,0.07800366154112043,999.0,999.0,0.0,999.0,0.0

@@ -1,0 +1,145 @@
+
+============================================================
+Phase 1-A: Tuning TRUE (Baseline, 100 runs)
+============================================================
+  cw=0.3 tw=0.1 ec=0.00  U=1045.6
+  cw=0.3 tw=0.1 ec=0.15  U=1071.2
+  cw=0.3 tw=0.1 ec=0.30  U=762.0
+  cw=0.3 tw=0.1 ec=0.50  U=1210.2
+  cw=0.3 tw=0.3 ec=0.00  U=479.6
+  cw=0.3 tw=0.3 ec=0.15  U=520.2
+  cw=0.3 tw=0.3 ec=0.30  U=825.6
+  cw=0.3 tw=0.3 ec=0.50  U=1052.6
+  cw=0.3 tw=0.5 ec=0.00  U=359.8
+  cw=0.3 tw=0.5 ec=0.15  U=518.6
+  cw=0.3 tw=0.5 ec=0.30  U=719.6
+  cw=0.3 tw=0.5 ec=0.50  U=335.6
+  cw=0.5 tw=0.1 ec=0.00  U=1381.2
+  cw=0.5 tw=0.1 ec=0.15  U=1129.6
+  cw=0.5 tw=0.1 ec=0.30  U=1204.8
+  cw=0.5 tw=0.1 ec=0.50  U=1244.8
+  cw=0.5 tw=0.3 ec=0.00  U=581.0
+  cw=0.5 tw=0.3 ec=0.15  U=710.8
+  cw=0.5 tw=0.3 ec=0.30  U=832.4
+  cw=0.5 tw=0.3 ec=0.50  U=549.2
+  cw=0.5 tw=0.5 ec=0.00  U=426.0
+  cw=0.5 tw=0.5 ec=0.15  U=506.2
+  cw=0.5 tw=0.5 ec=0.30  U=486.4
+  cw=0.5 tw=0.5 ec=0.50  U=373.8
+  cw=0.7 tw=0.1 ec=0.00  U=1091.0
+  cw=0.7 tw=0.1 ec=0.15  U=1150.6
+  cw=0.7 tw=0.1 ec=0.30  U=1252.8
+  cw=0.7 tw=0.1 ec=0.50  U=1333.6
+  cw=0.7 tw=0.3 ec=0.00  U=1027.8
+  cw=0.7 tw=0.3 ec=0.15  U=1045.2
+  cw=0.7 tw=0.3 ec=0.30  U=1104.2
+  cw=0.7 tw=0.3 ec=0.50  U=947.6
+  cw=0.7 tw=0.5 ec=0.00  U=595.2
+  cw=0.7 tw=0.5 ec=0.15  U=843.6
+  cw=0.7 tw=0.5 ec=0.30  U=964.0
+  cw=0.7 tw=0.5 ec=0.50  U=997.4
+  cw=0.9 tw=0.1 ec=0.00  U=1233.2
+  cw=0.9 tw=0.1 ec=0.15  U=1254.6
+  cw=0.9 tw=0.1 ec=0.30  U=1169.2
+  cw=0.9 tw=0.1 ec=0.50  U=992.8
+  cw=0.9 tw=0.3 ec=0.00  U=719.8
+  cw=0.9 tw=0.3 ec=0.15  U=997.2
+  cw=0.9 tw=0.3 ec=0.30  U=869.2
+  cw=0.9 tw=0.3 ec=0.50  U=608.2
+  cw=0.9 tw=0.5 ec=0.00  U=800.4
+  cw=0.9 tw=0.5 ec=0.15  U=664.6
+  cw=0.9 tw=0.5 ec=0.30  U=970.8
+  cw=0.9 tw=0.5 ec=0.50  U=955.6
+  cw=1.1 tw=0.1 ec=0.00  U=1184.2
+  cw=1.1 tw=0.1 ec=0.15  U=1242.0
+  cw=1.1 tw=0.1 ec=0.30  U=993.2
+  cw=1.1 tw=0.1 ec=0.50  U=1251.0
+  cw=1.1 tw=0.3 ec=0.00  U=1010.6
+  cw=1.1 tw=0.3 ec=0.15  U=841.8
+  cw=1.1 tw=0.3 ec=0.30  U=1084.2
+  cw=1.1 tw=0.3 ec=0.50  U=1209.6
+  cw=1.1 tw=0.5 ec=0.00  U=946.4
+  cw=1.1 tw=0.5 ec=0.15  U=1006.6
+  cw=1.1 tw=0.5 ec=0.30  U=1069.4
+  cw=1.1 tw=0.5 ec=0.50  U=1161.4
+  BEST TRUE config: cap_weight=0.5, theta_weight=0.1, exploration=0.0  U=1381.2
+
+============================================================
+Phase 1-B: Tuning TTB-cap (Baseline, 100 runs)
+============================================================
+  tw=0.3 uw=0.70 vp=-0.10  U=1532.0
+  tw=0.3 uw=0.70 vp=-0.04  U=1532.4
+  tw=0.3 uw=0.70 vp=0.00  U=1526.6
+  tw=0.5 uw=0.50 vp=-0.10  U=1539.6
+  tw=0.5 uw=0.50 vp=-0.04  U=1534.2
+  tw=0.5 uw=0.50 vp=0.00  U=1534.2
+  tw=0.7 uw=0.30 vp=-0.10  U=1487.6
+  tw=0.7 uw=0.30 vp=-0.04  U=1485.2
+  tw=0.7 uw=0.30 vp=0.00  U=1485.2
+  tw=0.9 uw=0.10 vp=-0.10  U=1456.8
+  tw=0.9 uw=0.10 vp=-0.04  U=1472.0
+  tw=0.9 uw=0.10 vp=0.00  U=1462.8
+  tw=1.1 uw=-0.10 vp=-0.10  U=1455.6
+  tw=1.1 uw=-0.10 vp=-0.04  U=1471.2
+  tw=1.1 uw=-0.10 vp=0.00  U=1474.0
+  BEST TTB config: trust_weight=0.5, util_weight=0.5, var_penalty=-0.1  U=1539.6
+
+============================================================
+Phase 1-C: Tuning MOO-cap (Baseline, 100 runs)
+============================================================
+  w=[0.1, 0.45, 0.03, 0.18, 0.24]  U=416.0
+  w=[0.2, 0.35, 0.03, 0.18, 0.24]  U=588.4
+  w=[0.3, 0.25, 0.03, 0.18, 0.24]  U=586.8
+  w=[0.4, 0.15, 0.03, 0.18, 0.24]  U=467.8
+  BEST MOO config: [0.2, 0.35, 0.03, 0.18, 0.24]  U=588.4
+
+============================================================
+Phase 2: Full scenario comparison with tuned params + cap noise
+============================================================
+
+--- cap_noise = 0.00 ---
+  baseline                  MOO-cap    U=   943.4 Fatal= 61.6
+  baseline                  TRUE       U=  1186.4 Fatal= 60.2
+  baseline                  TTB-cap    U=  1745.2 Fatal= 59.0
+  observation_manipulated   MOO-cap    U=   945.2 Fatal= 57.6
+  observation_manipulated   TRUE       U=  2472.4 Fatal= 50.5
+  observation_manipulated   TTB-cap    U=  3069.2 Fatal= 49.6
+  safety_critical           MOO-cap    U= -3140.4 Fatal= 41.9
+  safety_critical           TRUE       U= -2829.2 Fatal= 40.2
+  safety_critical           TTB-cap    U= -2041.0 Fatal= 38.9
+  utility_trust_misalignment MOO-cap    U=  2217.8 Fatal= 58.1
+  utility_trust_misalignment TRUE       U=  2410.6 Fatal= 55.8
+  utility_trust_misalignment TTB-cap    U=  2944.5 Fatal= 55.8
+
+--- cap_noise = 0.10 ---
+  baseline                  MOO-cap    U=   870.6 Fatal= 62.2
+  baseline                  TRUE       U=   700.0 Fatal= 61.0
+  baseline                  TTB-cap    U=  1685.0 Fatal= 58.6
+  observation_manipulated   MOO-cap    U=  1812.8 Fatal= 54.5
+  observation_manipulated   TRUE       U=  1651.2 Fatal= 52.8
+  observation_manipulated   TTB-cap    U=  2715.2 Fatal= 50.2
+  safety_critical           MOO-cap    U= -3067.2 Fatal= 40.9
+  safety_critical           TRUE       U= -3195.2 Fatal= 40.6
+  safety_critical           TTB-cap    U= -1913.4 Fatal= 38.9
+  utility_trust_misalignment MOO-cap    U=  2022.9 Fatal= 59.2
+  utility_trust_misalignment TRUE       U=  2023.6 Fatal= 57.1
+  utility_trust_misalignment TTB-cap    U=  3129.3 Fatal= 54.4
+
+--- cap_noise = 0.20 ---
+  baseline                  MOO-cap    U=   258.0 Fatal= 65.3
+  baseline                  TRUE       U=    86.2 Fatal= 64.5
+  baseline                  TTB-cap    U=  1387.0 Fatal= 60.5
+  observation_manipulated   MOO-cap    U=   883.6 Fatal= 57.8
+  observation_manipulated   TRUE       U=   801.2 Fatal= 56.6
+  observation_manipulated   TTB-cap    U=  2614.8 Fatal= 50.9
+  safety_critical           MOO-cap    U= -3291.0 Fatal= 42.6
+  safety_critical           TRUE       U= -3721.8 Fatal= 41.8
+  safety_critical           TTB-cap    U= -2394.4 Fatal= 39.5
+  utility_trust_misalignment MOO-cap    U=  2622.1 Fatal= 55.9
+  utility_trust_misalignment TRUE       U=  1859.5 Fatal= 57.2
+  utility_trust_misalignment TTB-cap    U=  3179.7 Fatal= 54.5
+
+============================================================
+P02 systematic experiment complete.
+Results in /mnt/cpfs/renpeiran/ai4e/TRUE/data/p02_results
+============================================================
