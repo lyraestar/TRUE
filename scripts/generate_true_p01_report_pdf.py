@@ -90,7 +90,7 @@ def load_timeseries(path: Path) -> Dict[Tuple[str, str, int], dict]:
     return out
 
 
-def make_line_chart(data, scenario, metric, ylabel, title, tmpdir):
+def make_line_chart(data, scenario, metric, ylabel, title, tmpdir, symlog=False):
     groups = sorted({k[1] for k in data if k[0] == scenario},
                     key=lambda g: list(GROUP_COLORS.keys()).index(g) if g in GROUP_COLORS else 99)
     rounds = sorted({k[2] for k in data if k[0] == scenario})
@@ -109,6 +109,9 @@ def make_line_chart(data, scenario, metric, ylabel, title, tmpdir):
     ax.set_xlabel("Round", fontsize=10)
     ax.set_ylabel(ylabel, fontsize=10)
     ax.set_title(title, fontsize=11, fontweight="bold")
+    if symlog:
+        ax.set_yscale("symlog", linthresh=50)
+        ax.set_ylabel(ylabel + " (symlog)", fontsize=10)
     ax.legend(loc="best", fontsize=7.5, framealpha=0.9)
     ax.grid(True, alpha=0.3)
     ax.set_xlim(1, max(rounds))
@@ -132,7 +135,8 @@ def make_all_charts(data, tmpdir):
         charts[scenario] = {}
         for metric, ylabel, title_suffix in metrics:
             title = f"{SCENARIO_LABELS.get(scenario, scenario)} — {title_suffix}"
-            charts[scenario][metric] = make_line_chart(data, scenario, metric, ylabel, title, tmpdir)
+            use_symlog = metric in ("cumulative_utility", "fatal")
+            charts[scenario][metric] = make_line_chart(data, scenario, metric, ylabel, title, tmpdir, symlog=use_symlog)
     return charts
 
 
