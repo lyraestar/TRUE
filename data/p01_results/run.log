@@ -1,0 +1,25 @@
+baseline TRUE U= 896.8 Q= 0.767 Fatal= 61.0
+baseline TRUE-C U= 1377.6 Q= 0.799 Fatal= 60.7
+baseline TRUE-E U= 779.2 Q= 0.765 Fatal= 61.0
+baseline TRUE-N U= 1326.0 Q= 0.798 Fatal= 60.5
+baseline Blind U= -23753.6 Q= 0.343 Fatal= 208.2
+baseline TTB U= -2289.2 Q= 0.738 Fatal= 77.2
+observation_manipulated TRUE U= 2102.4 Q= 0.769 Fatal= 51.7
+observation_manipulated TRUE-C U= 2819.6 Q= 0.805 Fatal= 50.5
+observation_manipulated TRUE-E U= 2070.4 Q= 0.769 Fatal= 51.7
+observation_manipulated TRUE-N U= 2457.2 Q= 0.802 Fatal= 51.7
+observation_manipulated Blind U= -25168.4 Q= 0.335 Fatal= 198.5
+observation_manipulated TTB U= -28398.8 Q= 0.233 Fatal= 221.8
+utility_trust_misalignment TRUE U= 2345.4 Q= 0.749 Fatal= 56.1
+utility_trust_misalignment TRUE-C U= 2954.1 Q= 0.782 Fatal= 55.6
+utility_trust_misalignment TRUE-E U= 2473.9 Q= 0.748 Fatal= 54.9
+utility_trust_misalignment TRUE-N U= 3332.8 Q= 0.784 Fatal= 54.2
+utility_trust_misalignment Blind U= -21939.2 Q= 0.335 Fatal= 206.9
+utility_trust_misalignment TTB U= 603.8 Q= 0.731 Fatal= 65.2
+safety_critical TRUE U= -3313.0 Q= 0.794 Fatal= 41.5
+safety_critical TRUE-C U= -2116.4 Q= 0.826 Fatal= 39.3
+safety_critical TRUE-E U= -3262.6 Q= 0.795 Fatal= 40.9
+safety_critical TRUE-N U= -1725.8 Q= 0.831 Fatal= 38.8
+safety_critical Blind U= -53506.0 Q= 0.340 Fatal= 214.4
+safety_critical TTB U= -5295.6 Q= 0.775 Fatal= 46.0
+Wrote outputs to /mnt/cpfs/renpeiran/ai4e/TRUE/data/p01_results

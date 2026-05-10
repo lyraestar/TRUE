@@ -1,0 +1,25 @@
+scenario,hypothesis,metric,mean_diff,t,p_t,w_stat,p_w,cohens_d,p_t_bonf,p_w_bonf
+baseline,TRUE_U > Blind_U,cumulative utility,1420.0,5.461538461538462,4.7202595165884986e-08,0.0,1.0,3.86189088186499,1.1328622839812397e-06,1.0
+baseline,TRUE_Fatal < Blind_Fatal,fatal errors,8.0,4.0,6.334248366623996e-05,0.0,1.0,2.82842712474619,0.001520219607989759,1.0
+baseline,TRUE_U > TTB_U,cumulative utility,1440.0,1.8,0.07186063822585176,0.0,1.0,1.2727922061357855,1.0,1.0
+baseline,TRUE_Fatal < TTB_Fatal,fatal errors,9.5,1.4615384615384617,0.14386772848161522,0.0,1.0,1.0334637571188003,1.0,1.0
+baseline,TRUE_Collapse < TTB_Collapse,collapse index,-0.0016362941251433227,-0.025137039937352477,0.9799456559109354,0.0,1.0,-0.017774571398659005,1.0,1.0
+baseline,TRUE_A9 < Blind_A9,A9 first selected delay,0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0
+observation_manipulated,TRUE_U > Blind_U,cumulative utility,1340.0,9.571428571428571,0.0,0.0,1.0,6.7680220484998115,0.0,1.0
+observation_manipulated,TRUE_Fatal < Blind_Fatal,fatal errors,9.0,9.0,0.0,0.0,1.0,6.363961030678928,0.0,1.0
+observation_manipulated,TRUE_U > TTB_U,cumulative utility,1760.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0
+observation_manipulated,TRUE_Fatal < TTB_Fatal,fatal errors,12.5,25.0,0.0,0.0,1.0,17.677669529663685,0.0,1.0
+observation_manipulated,TRUE_Collapse < TTB_Collapse,collapse index,0.15825331886115052,117.00000000000456,0.0,0.0,1.0,82.73149339882929,0.0,1.0
+observation_manipulated,TRUE_A9 < Blind_A9,A9 first selected delay,0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0
+safety_critical,TRUE_U > Blind_U,cumulative utility,1780.0,6.357142857142857,2.0554091761937343e-10,0.0,1.0,4.495178823257338,4.932982022864962e-09,1.0
+safety_critical,TRUE_Fatal < Blind_Fatal,fatal errors,7.0,3.5,0.0004652581580710802,0.0,1.0,2.4748737341529163,0.011166195793705924,1.0
+safety_critical,TRUE_U > TTB_U,cumulative utility,1530.0,1.0851063829787235,0.27787454061641004,0.0,1.0,0.7672860817130622,1.0,1.0
+safety_critical,TRUE_Fatal < TTB_Fatal,fatal errors,7.0,1.4,0.16151331846754213,0.0,1.0,0.9899494936611665,1.0,1.0
+safety_critical,TRUE_Collapse < TTB_Collapse,collapse index,0.01704081632653061,0.29401408450704214,0.7687471409135378,0.0,1.0,0.20789935291928413,1.0,1.0
+safety_critical,TRUE_A9 < Blind_A9,A9 first selected delay,0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0
+utility_trust_misalignment,TRUE_U > Blind_U,cumulative utility,1330.0,2.293103448275862,0.02184204991665961,0.0,1.0,1.6214689982381176,0.5242091979998307,1.0
+utility_trust_misalignment,TRUE_Fatal < Blind_Fatal,fatal errors,7.5,15.0,0.0,0.0,1.0,10.606601717798211,0.0,1.0
+utility_trust_misalignment,TRUE_U > TTB_U,cumulative utility,755.0,1.6236559139784947,0.10444926492717954,0.0,1.0,1.1480981070878353,1.0,1.0
+utility_trust_misalignment,TRUE_Fatal < TTB_Fatal,fatal errors,3.5,2.3333333333333335,0.01963065725729063,0.0,1.0,1.649915822768611,0.4711357741749751,1.0
+utility_trust_misalignment,TRUE_Collapse < TTB_Collapse,collapse index,0.0844526570663948,2.7856242118537184,0.005342476704537802,0.0,1.0,1.9697337700391961,0.12821944090890725,1.0
+utility_trust_misalignment,TRUE_A9 < Blind_A9,A9 first selected delay,0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0
